@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/baseContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_750_88"
+            android:background="@color/main_bg"/>
+
+        <RelativeLayout
+            android:id="@+id/baseContainerWithoutTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_750_88" >
+
+            <TextView
+                android:id="@+id/baseTextTip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/loading"
+                android:textColor="@color/text_light_gray"
+                android:textSize="@dimen/dp_750_28"
+                android:gravity="center"
+                android:visibility="invisible" />
+			
+			<!--<com.shenjing.smgame.base.view.LoadingView
+			    android:id="@+id/loadingView"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:visibility="gone">
+			</com.shenjing.smgame.base.view.LoadingView>-->
+            
+            <View
+                android:id="@+id/view_short_dark_over"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_750_180"
+                android:background="#50000000"
+                android:visibility="gone" />
+        
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_88"
+            layout="@layout/title_bar" />
+
+        <View
+            android:id="@+id/darkHover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#50000000"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</merge>

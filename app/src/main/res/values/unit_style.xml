@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="styleDividerHorizontal" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_750_1</item>
+        <item name="android:background">@color/unit_color_divider</item>
+    </style>
+
+    <style name="styleDividerVertical" >
+        <item name="android:layout_width">@dimen/dp_750_1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/unit_color_divider</item>
+    </style>
+
+
+    <style name="styleBtnEmphasisNew" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textSize">@dimen/sp_750_32</item>
+        <item name="android:textColor">@color/unit_selector_text_btn_emphasis</item>
+        <item name="android:background">@drawable/unit_selector_btn_emphasis_small_radius_new</item>
+    </style>
+</resources>

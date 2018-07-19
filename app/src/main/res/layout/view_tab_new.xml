@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/common_sw320dp_of_50"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_1"
+        android:background="@color/unit_color_divider"/>
+
+    <LinearLayout
+        android:id="@+id/main_tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+        <RelativeLayout
+            android:id="@+id/rest"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_sw320dp_of_40"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/imgChat"
+                android:layout_width="@dimen/common_sw320dp_of_25"
+                android:layout_height="@dimen/common_sw320dp_of_25"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/common_sw320dp_of_13"
+                android:background="@drawable/icon_chat_selector" />
+
+           <!-- <com.zjlp.bestface.view.NewCustomCountView
+                android:id="@+id/newCountViewOfFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imgChat"
+                android:layout_marginLeft="@dimen/common_sw320dp_of_18"
+                android:layout_marginTop="@dimen/common_sw320dp_of_1"/>
+-->
+            <View
+                android:id="@+id/newFoundMessagePoint"
+                android:layout_width="@dimen/common_sw320dp_of_9"
+                android:layout_height="@dimen/common_sw320dp_of_9"
+                android:layout_alignLeft="@+id/imgChat"
+                android:layout_marginLeft="@dimen/common_sw320dp_of_18"
+                android:layout_marginTop="@dimen/common_sw320dp_of_2"
+                android:background="@drawable/shape_account_center_new_tip"
+                android:visibility="gone" />
+
+         <!--   <com.zjlp.bestface.view.NewCustomCountView
+                android:id="@+id/newCountViewOfMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imgChat"
+                android:layout_marginLeft="@dimen/common_sw320dp_of_18"
+                android:layout_marginTop="@dimen/common_sw320dp_of_1"/>-->
+
+            <TextView
+                android:id="@+id/text_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="休息区"
+                android:textColor="@color/tab_textcolor_selector"
+                android:textSize="@dimen/common_font_sw320dp_of_10" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/game"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_sw320dp_of_40"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/icon_community_tab"
+                android:layout_width="@dimen/common_sw320dp_of_25"
+                android:layout_height="@dimen/common_sw320dp_of_25"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/common_sw320dp_of_13"
+                android:background="@drawable/icon_community_selector" />
+
+            <TextView
+                android:id="@+id/text_community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="游戏区"
+                android:textColor="@color/tab_textcolor_selector"
+                android:textSize="@dimen/common_font_sw320dp_of_10" />
+            <!--<com.zjlp.bestface.view.NewCustomCountView
+                android:id="@+id/newCommunityMessageNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/icon_community_tab"
+                android:layout_marginLeft="@dimen/common_sw320dp_of_18"
+                android:layout_marginTop="@dimen/common_sw320dp_of_1"
+                android:visibility="gone"/>-->
+            <View
+                android:id="@+id/newCommunityMessagePoint"
+                android:layout_width="@dimen/common_sw320dp_of_9"
+                android:layout_height="@dimen/common_sw320dp_of_9"
+                android:layout_alignRight="@+id/icon_community_tab"
+                android:layout_alignTop="@id/icon_community_tab"
+                android:background="@drawable/shape_account_center_new_tip"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/supply"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_sw320dp_of_40"
+            android:layout_weight="1" >
+            <ImageView
+                android:id="@+id/img_fishpond"
+                android:layout_width="@dimen/common_sw320dp_of_25"
+                android:layout_height="@dimen/common_sw320dp_of_25"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/common_sw320dp_of_13"
+                android:src="@drawable/icon_fishpond_selector" />
+            <TextView
+                android:id="@+id/text_fishpond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="补给区"
+                android:textColor="@color/tab_textcolor_selector"
+                android:textSize="@dimen/common_font_sw320dp_of_10" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/me"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_sw320dp_of_40"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgMe"
+                android:layout_width="@dimen/common_sw320dp_of_25"
+                android:layout_height="@dimen/common_sw320dp_of_25"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/common_sw320dp_of_13"
+                android:background="@drawable/icon_me_selector" />
+
+            <TextView
+                android:id="@+id/text_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="个人区"
+                android:textColor="@color/tab_textcolor_selector"
+                android:textSize="@dimen/common_font_sw320dp_of_10" />
+            <View
+                android:id="@+id/newMeMessagePoint"
+                android:layout_width="@dimen/common_sw320dp_of_9"
+                android:layout_height="@dimen/common_sw320dp_of_9"
+                android:layout_alignRight="@id/imgMe"
+                android:layout_alignTop="@id/imgMe"
+                android:background="@drawable/shape_account_center_new_tip"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

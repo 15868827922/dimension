@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_750_88"
+                android:background="@color/title_bar_color" >
+<RelativeLayout
+    android:id="@+id/normalTitle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_750_100"
+    android:gravity="center_vertical"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:id="@+id/leftTitleLayout"
+        android:layout_width="@dimen/dp_750_88"
+        android:layout_height="match_parent"
+        android:background="@drawable/unit_selector_bg_view_init_transparent"
+        android:visibility="gone">
+        <ImageView 
+            android:id="@+id/leftTitleImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_750_22"/>
+      <!--  <com.shenjing.smgame.base.view.NewCustomCountView
+            android:id="@+id/newTitleCountView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" 
+            android:layout_marginRight="@dimen/dp_750_12"
+            android:layout_marginTop="@dimen/dp_750_12"/>-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/titleAndImgLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_750_100"
+        android:layout_marginRight="@dimen/dp_750_100"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:gravity="top"
+            android:paddingTop="@dimen/dp_750_18"
+            android:textSize="@dimen/sp_750_38"/>
+        <ImageView
+            android:id="@+id/imgRightTitle"
+            android:layout_width="@dimen/dp_750_30"
+            android:layout_height="@dimen/dp_750_16"
+            android:layout_marginLeft="@dimen/dp_750_20"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!--<RadioGroup
+        android:id="@+id/radioGroupStatus"
+        android:layout_width="@dimen/dp_750_280"
+        android:layout_height="@dimen/dp_750_60"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <RadioButton
+            android:id="@+id/radioLeft"
+            style="@style/tabTitleBarRadioLeft"
+            android:layout_height="match_parent"
+            android:text="好友" />
+
+        <RadioButton
+            android:id="@+id/radioRight"
+            style="@style/tabTitleBarRadioRight"
+            android:layout_height="match_parent"
+            android:text="客户" />
+    </RadioGroup>
+-->
+    <!--<com.zjlp.bestface.view.SelfDefRadioGroup.SelfDefRadioGroup
+        android:id="@+id/friendAndClientRadioGroupStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+        <com.zjlp.bestface.view.SelfDefRadioGroup.SelfDefRadioButton
+            android:id="@+id/radioChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.zjlp.bestface.view.SelfDefRadioGroup.SelfDefRadioButton
+            android:id="@+id/radioFriend"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.zjlp.bestface.view.SelfDefRadioGroup.SelfDefRadioGroup>-->
+
+    <ImageView
+        android:id="@+id/right_title_btn"
+        android:layout_width="@dimen/dp_750_88"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/unit_selector_bg_view_init_transparent"
+        android:padding="@dimen/dp_750_22"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/dp_750_32"/>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_750_24"
+        android:layout_alignParentRight="true">
+        <com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView
+            android:id="@+id/right_title_btn_network"
+            android:layout_width="@dimen/dp_750_64"
+            android:layout_height="@dimen/dp_750_64"
+            android:scaleType="centerCrop"/>
+        <View
+            android:id="@+id/right_title_red_dot"
+            android:layout_width="@dimen/dp_750_20"
+            android:layout_height="@dimen/dp_750_20"
+            android:background="@drawable/shape_account_center_new_tip"
+            android:layout_gravity="right"
+            android:visibility="invisible"/>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/right_title_text_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dp_750_16"
+        android:layout_marginRight="@dimen/dp_750_54"
+        android:clickable="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/common_font_sw320dp_of_13"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/right_title_btn_red"
+        style="@style/styleBtnEmphasisNew"
+        android:layout_width="@dimen/dp_750_150"
+        android:layout_height="@dimen/dp_750_64"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_750_24"
+        android:text="@string/login_btn_text"
+        android:textSize="@dimen/sp_750_26"
+        android:enabled="false"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/left_title_text_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dp_750_16"
+        android:layout_marginLeft="@dimen/dp_750_8"
+        android:clickable="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="返回"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/common_font_sw320dp_of_13"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/right_title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_750_54"
+        android:clickable="true"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/right_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/dp_750_38" />
+
+        <ImageView
+            android:id="@+id/right_title_index"
+            android:layout_width="@dimen/dp_750_10"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/right_title_text"
+            android:layout_marginLeft="@dimen/dp_750_10"
+            android:layout_toRightOf="@id/right_title_text"
+            android:src="@mipmap/icon_nav_switch" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    <!--<com.zjlp.bestface.view.LPSearchView
+        android:id="@+id/titleSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_88"
+        android:layout_marginLeft="@dimen/dp_750_72"
+        android:gravity="center_vertical"
+        android:visibility="gone" />-->
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/dp_750_88"
+        android:layout_height="match_parent"
+        android:background="@drawable/unit_selector_bg_view_init_transparent"
+        android:paddingLeft="@dimen/dp_750_33"
+        android:paddingRight="@dimen/dp_750_33"
+        android:paddingTop="@dimen/dp_750_24"
+        android:paddingBottom="@dimen/dp_750_24"
+        android:src="@mipmap/icon_back_arrow_left_white"
+        android:layout_marginLeft="@dimen/dp_750_34"/>
+
+    <View
+        android:id="@+id/divider_bottom_bar"
+        style="@style/styleDividerHorizontal"
+        android:layout_gravity="bottom"/>
+</FrameLayout>

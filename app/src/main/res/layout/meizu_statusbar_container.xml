@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/meizuStatusBarContainer"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/common_sw320dp_of_25"
+      android:background="@drawable/shape_gradient_bg"
+      android:visibility="visible" >
+</View>
