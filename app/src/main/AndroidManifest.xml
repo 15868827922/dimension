@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--
+        <meta-data
+        android:name="sdk_key_version_update_type"
+        android:value="${CHANNEL_VALUE}" />
+    -->
     <application
         android:name=".dimension.main.LPApplicationLike"
         android:allowBackup="true"
@@ -19,6 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".dimension.me.SettingActivity" />
+        <activity android:name=".dimension.me.SelfMessageActivity" />
+        <activity android:name=".dimension.me.ModifyPersonalInfoActivity" />
+        <activity android:name=".dimension.me.SafeAndSecretActivity" />
+        <activity android:name=".dimension.me.ChangePhoneActivity" />
+        <activity android:name=".dimension.me.ChageNewPhoneActivity" />
+        <activity android:name=".dimension.me.SetSecurityActivity" />
+        <activity android:name=".dimension.me.AboutDimensionActivity" />
+        <activity android:name=".dimension.me.ChangePassWordActivity"></activity>
     </application>
 
 </manifest>

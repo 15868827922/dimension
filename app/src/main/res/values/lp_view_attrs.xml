@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="itemWithRightArrow">
+        <attr name="itemStyle">
+            <enum name="type_title_only" value="0" />
+            <enum name="type_title_with_textInfo" value="1" />
+            <enum name="type_title_with_editText" value="2" />
+            <enum name="type_title_with_thumImage" value="3" />
+            <enum name="type_title_has_leftImage" value="4" />
+        </attr>
+
+        <attr name="titleText" format="string" />
+        <attr name="itemEnable" format="boolean" />
+
+        <!-- type_title_with_textInfo 属性 -->
+        <attr name="secText" format="string" />
+
+        <!-- type_title_with_textInfo 属性 -->
+        <attr name="secTextColor" format="reference" />
+
+        <!-- type_title_has_leftImage 属性 -->
+        <attr name="titleTextPaddingLeft" format="dimension" />
+
+        <!-- type_title_with_editText 属性 -->
+        <attr name="inputLenght" format="integer" />
+        <attr name="inputHint" format="string" />
+        <attr name="maxLines" format="integer" />
+
+        <!-- type_title_with_thumImage 属性 -->
+        <attr name="defaultThumImage" format="reference" />
+
+        <!-- type_title_has_leftImage 属性 -->
+        <attr name="headerImage" format="reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="numKeyBoard">
+    <attr name="keyBoardType">
+        <enum name="type_pwd" value="0" />
+        <enum name="type_id" value="1" />
+    </attr>
+    </declare-styleable>
+
+    <declare-styleable name="safeTip">
+        <attr name="safeInfo" format="string" />
+    </declare-styleable>
+
+</resources>

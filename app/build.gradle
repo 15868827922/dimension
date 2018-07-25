@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion rootProject.ext.compileVersion
     defaultConfig {
         applicationId "com.shenjing.dimension"
@@ -12,13 +13,11 @@ android {
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         multiDexEnabled true
     }
-
     lintOptions {
 
         abortOnError false
 
     }
-
     allprojects {
         repositories {
             jcenter()
@@ -28,27 +27,91 @@ android {
 //            maven { url 'https://jitpack.io' }
         }
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+    //多渠道打包
+/*    productFlavors {
+        shenjing {}
+        xiaomi {}
+        qh360 {}
+        baidu {}
+        wandoujia {}
     }
 
+    //自动配置
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    }*/
+
+    signingConfigs {
+        release {
+            keyAlias 'dimension'
+            keyPassword 'sj20180723'
+            storeFile file('C:/Android/new_project/Dimension/app/dimension.jks')
+            storePassword 'sj20180723'
+        }
+        debug {
+            keyAlias 'dimension'
+            keyPassword 'sj20180723'
+            storeFile file('C:/Android/new_project/Dimension/app/dimension.jks')
+            storePassword 'sj20180723'
+        }
+        dimension {
+            keyAlias 'dimension'
+            keyPassword 'sj20180723'
+            storeFile file('C:/Android/new_project/Dimension/app/dimension.jks')
+            storePassword 'sj20180723'
+        }
+    }
+    buildTypes {
+
+        release {
+            //启用混淆代码的功能
+            minifyEnabled true
+            //指定混淆规则，需要压缩优化的混淆要把proguard-android.txt换成proguard-android.txt
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            android {
+                // 自定义APK输出配置
+                applicationVariants.all { variant ->
+                    variant.outputs.all { output ->
+                        def outputFile = output.outputFile
+                        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                            // 输出apk名称为com_biniusports_app_bnsports_v1.0.0_20171205_baidu.apk
+//                            def fileName = "com_biniusports_app_bnsports_v${defaultConfig.versionName}_${getNowTime()}_${variant.productFlavors[0].name}.apk"
+//                            outputFileName = fileName
+/*_${variant.productFlavors[0].name}*/
+                            if (variant.buildType.name.equals('release')) {
+                                def fileName = "dimension_v${defaultConfig.versionName}_${getNowTime()}.apk"
+                                outputFileName = fileName
+                            } else {
+                                outputFileName = "debug.apk"
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     dexOptions {
         javaMaxHeapSize "4g"
         preDexLibraries = false
     }
+}
 
+def getNowTime() {
+    def date = new Date()
+    def now = date.format('yyyyMMdd')
+    return now
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation "com.android.support:support-v4:$rootProject.ext.supportVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
@@ -58,14 +121,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':swipebacklib')
-
     implementation 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'   // 后面需要用到
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // 后面需要用到
     implementation 'com.android.support:multidex:1.0.2'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation files('libs/glideloadhttps.jar')
-
     implementation 'com.jakewharton:butterknife:7.0.1'
     implementation 'com.jwenfeng.pulltorefresh:library:1.2.7'
-
 }

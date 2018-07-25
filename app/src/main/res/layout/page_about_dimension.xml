@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dimension.me.AboutDimensionActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+    <ImageView
+        android:layout_width="@dimen/dp_750_242"
+        android:layout_height="@dimen/dp_750_242"
+        android:src="@mipmap/icon_app"
+        android:layout_marginTop="@dimen/dp_750_120"/>
+
+    <ImageView
+        android:layout_width="@dimen/dp_750_192"
+        android:layout_height="@dimen/dp_750_36"
+        android:src="@mipmap/icon_app_name"
+        android:layout_below="@+id/img_app_icon"
+        android:layout_marginTop="@dimen/dp_750_52"/>
+
+    <TextView
+        android:id="@+id/tv_version_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="1.1.1"
+        android:textColor="@color/unit_text_tv_title_1"
+        android:textSize="@dimen/sp_750_24"
+        android:layout_marginTop="@dimen/dp_750_30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="神鲸（杭州）网络科技有限公司"
+        android:textColor="@color/unit_text_tv_title_1"
+        android:textSize="@dimen/sp_750_24"
+        android:layout_marginTop="@dimen/dp_750_30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="联系方式：ciyuanjv@qq.com"
+        android:textColor="@color/unit_text_tv_title_3"
+        android:textSize="@dimen/sp_750_18"
+        android:layout_marginTop="@dimen/dp_750_32"
+        android:layout_marginBottom="@dimen/dp_750_106"/>
+
+</LinearLayout>

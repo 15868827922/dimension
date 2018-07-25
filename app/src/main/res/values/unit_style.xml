@@ -2,12 +2,12 @@
 <resources>
     <style name="styleDividerHorizontal" >
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/dp_750_1</item>
+        <item name="android:layout_height">@dimen/dp_750_1p5</item>
         <item name="android:background">@color/unit_color_divider</item>
     </style>
 
     <style name="styleDividerVertical" >
-        <item name="android:layout_width">@dimen/dp_750_1</item>
+        <item name="android:layout_width">@dimen/dp_750_1p5</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/unit_color_divider</item>
     </style>

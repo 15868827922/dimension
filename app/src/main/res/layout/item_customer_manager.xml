@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_66"
+        android:orientation="vertical"
+        android:background="@drawable/selector_white_item_hover">
+
+        <TextView
+            android:id="@+id/textShopName"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_750_60"
+            android:paddingLeft="@dimen/dp_750_32"
+            android:text="林斯卡多费劲啊"
+            android:textColor="@color/unit_text_tv_title_1"
+            android:textSize="@dimen/sp_750_24"
+            android:gravity="center_vertical" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_6"
+            android:background="@drawable/shape_bg_input"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+
+</LinearLayout>

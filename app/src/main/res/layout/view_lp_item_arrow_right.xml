@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_750_100"
+    android:paddingLeft="@dimen/dp_750_24"
+    android:paddingRight="@dimen/dp_750_24"
+    android:background="@drawable/selector_white_item_hover"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/imvLeftImage"
+        android:layout_width="@dimen/dp_750_30"
+        android:layout_height="@dimen/dp_750_28"
+        android:layout_marginRight="@dimen/dp_750_24"
+        android:src="@color/unit_color_loadimv_main"
+        android:scaleType="fitCenter"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextTitle"
+        android:layout_centerVertical="true"
+        android:textColor="@color/unit_text_tv_title_1"
+        android:textSize="@dimen/sp_750_24"/>
+
+    <ImageView
+        android:id="@+id/red_dot"
+        android:layout_width="@dimen/dp_750_20"
+        android:layout_height="@dimen/dp_750_20"
+        android:layout_marginLeft="@dimen/dp_750_12"
+        android:background="@drawable/shape_account_center_new_tip"
+        android:visibility="gone"/>
+
+    <!-- 用于占位 -->
+    <View
+        android:id="@+id/setUpView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/textSecTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/unit_text_tv_title_2"
+        android:singleLine="true"
+        android:textSize="@dimen/sp_750_20"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:visibility="visible"/>
+
+    <EditText
+        android:id="@+id/edtSecTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入"
+        android:textColorHint="@color/unit_text_tv_title_3"
+        android:textColor="@color/color_arrow_right_edt"
+        android:singleLine="true"
+        android:textSize="@dimen/sp_750_28"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:gravity="right"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imvThumRightImage"
+        android:layout_width="@dimen/dp_750_36"
+        android:layout_height="@dimen/dp_750_36"
+        android:src="@color/unit_color_loadimv_main"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/arrowRight"
+        android:layout_width="@dimen/dp_750_14"
+        android:layout_height="@dimen/dp_750_22"
+        android:layout_marginLeft="@dimen/dp_750_32"
+        android:src="@mipmap/arrow"
+        android:visibility="visible"/>
+
+
+</LinearLayout>

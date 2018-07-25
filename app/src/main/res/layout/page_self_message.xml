@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/view_self_message"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_130"
+            android:background="@drawable/selector_white_item_hover"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_750_24"
+                android:layout_weight="1"
+                android:text="头像"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:textSize="@dimen/sp_750_24" />
+
+            <com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView
+                android:layout_width="@dimen/dp_750_100"
+                android:layout_height="@dimen/dp_750_100"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/default_image_header"
+                app:riv_corner_radius="@dimen/dp_750_50" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_750_14"
+                android:layout_height="@dimen/dp_750_22"
+                android:layout_marginLeft="@dimen/dp_750_32"
+                android:layout_marginRight="@dimen/dp_750_26"
+                android:src="@mipmap/arrow"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未填写"
+            app:titleText="昵称"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:titleText="ID号"
+            android:background="@drawable/selector_white_item_hover"/>
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_sign"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未填写"
+            app:titleText="签名"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_10"
+            android:background="@color/unit_view_stub" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_sex"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未选择"
+            app:titleText="性别"
+            android:background="@drawable/selector_white_item_hover"/>
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未设置"
+            app:titleText="生日"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_constellation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未选择"
+            app:titleText="星座"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_location"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未设置"
+            app:titleText="所在地" />
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_user_industry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:secText="未选择"
+            app:titleText="行业"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_10"
+            android:background="@color/unit_view_stub" />
+
+        <com.shenjing.dimension.dimension.view.LPItemArrowRightView
+            android:id="@+id/view_address_manager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            app:itemStyle="type_title_with_textInfo"
+            app:titleText="地址管理"
+            android:background="@drawable/selector_white_item_hover" />
+
+        <View
+            style="@style/styleDividerHorizontal"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_26" />
+
+        <LinearLayout
+            android:id="@+id/view_set_security"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_100"
+            android:background="@drawable/selector_white_item_hover"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_750_24"
+            android:paddingRight="@dimen/dp_750_26"
+            android:layout_marginBottom="@dimen/dp_750_88">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="设置密保问题"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:textSize="@dimen/sp_750_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="（可用于变更手机号）"
+                android:textColor="@color/unit_text_tv_title_4"
+                android:textSize="@dimen/sp_750_18" />
+
+            <ImageView
+                android:id="@+id/arrowRight"
+                android:layout_width="@dimen/dp_750_14"
+                android:layout_height="@dimen/dp_750_22"
+                android:layout_marginLeft="@dimen/dp_750_32"
+                android:src="@mipmap/arrow"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

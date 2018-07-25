@@ -47,7 +47,8 @@
             android:textColor="@color/white"
             android:gravity="top"
             android:paddingTop="@dimen/dp_750_18"
-            android:textSize="@dimen/sp_750_38"/>
+            android:textSize="@dimen/sp_750_36"
+            android:textStyle="bold"/>
         <ImageView
             android:id="@+id/imgRightTitle"
             android:layout_width="@dimen/dp_750_30"
@@ -130,14 +131,14 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:padding="@dimen/dp_750_16"
-        android:layout_marginRight="@dimen/dp_750_54"
+        android:padding="@dimen/dp_750_24"
         android:clickable="true"
         android:gravity="center"
         android:singleLine="true"
-        android:textColor="@color/text_black"
-        android:textSize="@dimen/common_font_sw320dp_of_13"
-        android:visibility="gone"/>
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_750_24"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/right_title_btn_red"
@@ -185,7 +186,7 @@
             android:singleLine="true"
             android:text="@string/app_name"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/dp_750_38" />
+            android:textSize="@dimen/dp_750_38"/>
 
         <ImageView
             android:id="@+id/right_title_index"
@@ -209,15 +210,14 @@
 
     <ImageView
         android:id="@+id/back"
-        android:layout_width="@dimen/dp_750_88"
+        android:layout_width="@dimen/dp_750_76"
         android:layout_height="match_parent"
         android:background="@drawable/unit_selector_bg_view_init_transparent"
-        android:paddingLeft="@dimen/dp_750_33"
-        android:paddingRight="@dimen/dp_750_33"
+        android:paddingLeft="@dimen/dp_750_26"
+        android:paddingRight="@dimen/dp_750_26"
         android:paddingTop="@dimen/dp_750_24"
         android:paddingBottom="@dimen/dp_750_24"
-        android:src="@mipmap/icon_back_arrow_left_white"
-        android:layout_marginLeft="@dimen/dp_750_34"/>
+        android:src="@mipmap/icon_back_arrow_left_white"/>
 
     <View
         android:id="@+id/divider_bottom_bar"

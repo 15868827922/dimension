@@ -85,6 +85,7 @@ public class BaseActivity extends FundmentalActivity implements OnClickListener{
             }
         });
 
+
         setTitleBarColor(getResources().getColor(R.color.title_bar_color));
     }
 
