@@ -31,4 +31,30 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+
+    <style name="tabTitleBarRadioLeft" parent="@style/tabRadio">
+        <item name="android:background">@drawable/selector_radio_titlebar_left_bg</item>
+        <item name="android:textColor">@color/radio_titlebar_text</item>
+    </style>
+
+    <style name="tabTitleBarRadioRight" parent="@style/tabRadio">
+        <item name="android:background">@drawable/selector_radio_titlebar_right_bg</item>
+        <item name="android:textColor">@color/radio_titlebar_text</item>
+    </style>
+    <style name="tabTitleBarRadioMiddle" parent="@style/tabRadio">
+        <item name="android:background">@drawable/selector_radio_titlebar_middle_bg</item>
+        <item name="android:textColor">@color/radio_titlebar_text</item>
+    </style>
+
+    <style name="tabRadio" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_750_60</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/radio_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/sp_750_24</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 </resources>

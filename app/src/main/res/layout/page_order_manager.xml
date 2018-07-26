@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dimension.me.OrderManagerActivity"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <RadioGroup
+        android:id="@+id/radioGroupStatus"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_60"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp_750_26"
+        android:layout_marginRight="@dimen/dp_750_26"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/dp_750_40">
+
+        <RadioButton
+            android:id="@+id/radioLeft"
+            style="@style/tabTitleBarRadioLeft"
+            android:layout_height="match_parent"
+            android:text="全部记录"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioMiddle1"
+            style="@style/tabTitleBarRadioMiddle"
+            android:layout_height="match_parent"
+            android:text="充值记录" />
+        <RadioButton
+            android:id="@+id/radioMiddle2"
+            style="@style/tabTitleBarRadioMiddle"
+            android:layout_height="match_parent"
+            android:text="消费记录" />
+
+        <RadioButton
+            android:id="@+id/radioRight"
+            style="@style/tabTitleBarRadioRight"
+            android:layout_height="match_parent"
+            android:text="兑换记录" />
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+</LinearLayout>

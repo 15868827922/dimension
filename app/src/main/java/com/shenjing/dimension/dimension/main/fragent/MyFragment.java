@@ -8,6 +8,7 @@ import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.fragment.FragmentBase;
 import com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
+import com.shenjing.dimension.dimension.me.MyWalletActivity;
 import com.shenjing.dimension.dimension.me.SettingActivity;
 import com.shenjing.dimension.dimension.me.view.SignDialog;
 
@@ -64,6 +65,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
             case R.id.view_my_task:  //我的任务
                 break;
             case R.id.view_my_wallet:  //我的钱包
+                ActivityUtil.gotoActivity(getActivity(), MyWalletActivity.class);
                 break;
             case R.id.view_my_backpack:  //我的背包
                 break;

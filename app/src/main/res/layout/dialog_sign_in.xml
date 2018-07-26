@@ -223,6 +223,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_close_dialog"
             android:layout_width="@dimen/dp_750_180"
             android:layout_height="@dimen/dp_750_58"
             android:layout_marginTop="@dimen/dp_750_52"

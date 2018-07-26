@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.activity.BaseActivity;
+import com.shenjing.dimension.dimension.base.util.ActivityUtil;
 
 import butterknife.ButterKnife;
 
@@ -30,6 +31,7 @@ public class MyWalletActivity extends BaseActivity {
         super.onClick(v);
         switch (v.getId()){
             case ID_RIGHT_TEXT:
+                ActivityUtil.gotoActivity(this, OrderManagerActivity.class);
                 break;
         }
     }

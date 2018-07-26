@@ -33,7 +33,8 @@
         <activity android:name=".dimension.me.SetSecurityActivity" />
         <activity android:name=".dimension.me.AboutDimensionActivity" />
         <activity android:name=".dimension.me.ChangePassWordActivity" />
-        <activity android:name=".dimension.me.MyWalletActivity"></activity>
+        <activity android:name=".dimension.me.MyWalletActivity" />
+        <activity android:name=".dimension.me.OrderManagerActivity"></activity>
     </application>
 
 </manifest>

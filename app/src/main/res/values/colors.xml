@@ -31,6 +31,8 @@
     <color name="unit_color_switchbtn_on">#FFE100</color>  <!--  开关按钮，开状态色值  -->
     <color name="unit_color_loadimv_main">@color/default_load_color</color>   <!--  图片加载统一背景色 -->
 
+    <color name="color_ratio_inner">@color/unit_text_tv_title_1</color>
+
     <color name="unit_bg_btn_get">#595757</color> <!--  button，获取按钮   -->
     <color name="unit_bg_btn_execute">@color/unit_text_tv_title_1</color> <!--  button，执行按钮   -->
 

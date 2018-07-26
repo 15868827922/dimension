@@ -28,12 +28,14 @@ public class SignDialog extends Dialog implements View.OnClickListener{
         setContentView(R.layout.dialog_sign_in);
         setCanceledOnTouchOutside(true);
         findViewById(R.id.view_main).setOnClickListener(this);
+        findViewById(R.id.btn_close_dialog).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.view_main:
+            case R.id.btn_close_dialog:
                 dismiss();
                 break;
         }
