@@ -32,7 +32,8 @@
         <activity android:name=".dimension.me.ChageNewPhoneActivity" />
         <activity android:name=".dimension.me.SetSecurityActivity" />
         <activity android:name=".dimension.me.AboutDimensionActivity" />
-        <activity android:name=".dimension.me.ChangePassWordActivity"></activity>
+        <activity android:name=".dimension.me.ChangePassWordActivity" />
+        <activity android:name=".dimension.me.MyWalletActivity"></activity>
     </application>
 
 </manifest>
