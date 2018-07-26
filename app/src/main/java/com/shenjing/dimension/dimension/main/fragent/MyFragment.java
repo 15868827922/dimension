@@ -9,6 +9,7 @@ import com.shenjing.dimension.dimension.base.fragment.FragmentBase;
 import com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
 import com.shenjing.dimension.dimension.me.SettingActivity;
+import com.shenjing.dimension.dimension.me.view.SignDialog;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,6 +35,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
     public void initView(@Nullable View view) {
         ButterKnife.bind(this,view);
 
+        findViewById(R.id.img_is_sign).setOnClickListener(this);
         findViewById(R.id.view_my_task).setOnClickListener(this);
         findViewById(R.id.view_my_wallet).setOnClickListener(this);
         findViewById(R.id.view_my_backpack).setOnClickListener(this);
@@ -80,7 +82,16 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 break;
             case R.id.view_give_feedback:  //意见反馈
                 break;
+            case R.id.img_is_sign:  //签到
+                showSignDialog();
+                break;
         }
 
+    }
+
+    SignDialog signDialog;
+    private void showSignDialog(){
+        signDialog = new SignDialog(getActivity());
+        signDialog.show();
     }
 }

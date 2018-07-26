@@ -440,7 +440,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_750_100"
                     app:itemStyle="type_title_with_textInfo"
-                    app:titleText="请赐予我评分吧"/>
+                    app:titleText="请赐予我评分吧"
+                    android:background="@drawable/selector_white_item_hover"/>
                 <View
                     style="@style/styleDividerHorizontal"
                     android:layout_marginLeft="@dimen/dp_750_24"
@@ -450,7 +451,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_750_100"
                     app:itemStyle="type_title_with_textInfo"
-                    app:titleText="反馈与建议"/>
+                    app:titleText="反馈与建议"
+                    android:background="@drawable/selector_white_item_hover"/>
             </LinearLayout>
         </ScrollView>
     </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>

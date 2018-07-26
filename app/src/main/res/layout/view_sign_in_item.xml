@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
+    <RelativeLayout
+        android:id="@+id/view_sign_day2"
+        android:layout_width="@dimen/dp_750_62"
+        android:layout_height="@dimen/dp_750_84"
+        android:background="@mipmap/bg_sign_in"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/tv_sign_day_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_750_10"
+            android:text="+5"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_750_26"
+            android:textColor="@color/unit_text_tv_tip"/>
+    </RelativeLayout>
+</RelativeLayout>
