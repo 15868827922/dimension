@@ -1,16 +1,34 @@
 package com.shenjing.dimension.dimension.main.fragent;
 
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.jwenfeng.library.pulltorefresh.ViewStatus;
 import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.fragment.FragmentBase;
 import com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView;
+import com.shenjing.dimension.dimension.base.request.AesUtils;
+import com.shenjing.dimension.dimension.base.request.HttpRequestCallback;
+import com.shenjing.dimension.dimension.base.request.RequestMap;
+import com.shenjing.dimension.dimension.base.request.URLManager;
+import com.shenjing.dimension.dimension.base.request.aes.AES;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
+import com.shenjing.dimension.dimension.main.LPApplicationLike;
 import com.shenjing.dimension.dimension.me.MyWalletActivity;
 import com.shenjing.dimension.dimension.me.SettingActivity;
 import com.shenjing.dimension.dimension.me.view.SignDialog;
+import com.zjlp.httpvolly.HttpService;
+import com.zjlp.httpvolly.RequestError;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,7 +36,8 @@ import butterknife.ButterKnife;
 public class MyFragment extends FragmentBase implements View.OnClickListener{
 
     public static final String TAG="MyFragment";
-
+    String mString = "hello everyone!";
+    byte[] mBytes = null;
     @Bind(R.id.img_user_header)
     LPNetworkRoundedImageView mImgUserHeader; //用户头像
 
@@ -27,6 +46,8 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
 
     @Bind(R.id.tv_id)
     TextView mTvId;  //用户id
+
+    private RequestMap requestMap = RequestMap.newInstance();
     @Override
     public int getContentLayout() {
         return R.layout.fragment_my;
@@ -53,7 +74,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
 
     @Override
     public void initData() {
-
+        reqAddressList();
     }
 
     @Override
@@ -63,6 +84,25 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 ActivityUtil.gotoActivity(getActivity(), SettingActivity.class);
                 break;
             case R.id.view_my_task:  //我的任务
+                /*// 解密
+                String decrypted = null;
+                try {
+                    decrypted = AesUtils.decrypt("B+gR8WqBGJ9kUE48YSYrSA==");
+                    mTvUserName.setText("解密：" + decrypted);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }*/
+
+                try {
+                    AES mAes = new AES();
+                 /*   mBytes = mString.getBytes("UTF8");
+                    String enString = mAes.encrypt(mBytes);
+                    mTvId.setText("加密后：" + enString);*/
+                    String deString = mAes.decrypt("MS4yMzQ1Njc4MTIzNDU3RSsxNQ==");
+                    mTvUserName.setText("解密后：" + deString);
+                } catch (Exception e) {
+                    Log.i("qing", "MainActivity----catch");
+                }
                 break;
             case R.id.view_my_wallet:  //我的钱包
                 ActivityUtil.gotoActivity(getActivity(), MyWalletActivity.class);
@@ -96,4 +136,49 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
         signDialog = new SignDialog(getActivity());
         signDialog.show();
     }
+
+
+    private void reqAddressList(){
+        String url = URLManager.getRequestURL(URLManager.Method_Address_list);
+        requestMap.cancel(url);
+        JSONObject jsonObject = new JSONObject();
+//        try {
+//            jsonObject.put("uid", LPApplicationLike.getUserId());
+//            jsonObject.put("token",LPApplicationLike.getUserToken());
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+
+        HttpRequestCallback callback = new HttpRequestCallback(getActivity()) {
+            @Override
+            public void onFinished(JSONObject jsonObject) {
+                super.onFinished(jsonObject);
+                try {
+                    jsonObject = new JSONObject(jsonObject.toString().replace(":null", ":\"\""));
+                    JSONArray array  = jsonObject.optJSONArray("data");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailed(RequestError error) {
+                super.onFailed(error);
+                toast(error.getErrorReason());
+
+            }
+            @Override
+            public void onQuitApp(String message) {
+                super.onQuitApp(message);
+
+                Toast.makeText(getContext(),message,Toast.LENGTH_SHORT).show();
+            }
+
+        };
+        Request request = HttpService.doPost(url, jsonObject, callback, true, true, true);
+        requestMap.add(url, request);
+    }
+
 }

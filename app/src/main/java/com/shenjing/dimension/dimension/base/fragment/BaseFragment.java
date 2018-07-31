@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.shenjing.dimension.dimension.base.activity.BaseActivity;
-import com.shenjing.dimension.dimension.base.log.LPLog;
+import com.zjlp.httpvolly.log.LPLog;
 
 
 public class BaseFragment extends Fragment {

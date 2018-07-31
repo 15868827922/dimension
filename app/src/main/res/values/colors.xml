@@ -25,6 +25,7 @@
     <color name="unit_edt_hint_text">#9FA0A0</color> <!--  edt的默认颜色值  -->
     <color name="unit_edt_text">@color/unit_text_tv_title_1</color> <!--  edt的颜色值  -->
 
+    <color name="item_pressed_color">#e0e0e0</color>
 
     <color name="unit_view_stub">#F7F7F7</color> <!--  用于View有高度的分割线  -->
 

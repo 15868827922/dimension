@@ -1,8 +1,18 @@
 package com.shenjing.dimension.dimension.main;
 
 import android.content.Context;
+import android.os.Build;
+import android.os.StrictMode;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
+
+import com.shenjing.dimension.dimension.base.cathe.SharePreferenceUtil;
+import com.shenjing.dimension.dimension.base.debug.Configuration;
+import com.shenjing.dimension.dimension.base.debug.DebugUtils;
+import com.shenjing.dimension.dimension.base.image.ImageUrlManager;
+import com.shenjing.dimension.dimension.base.request.URLManager;
+import com.shenjing.dimension.dimension.base.util.ActivityUtil;
+import com.zjlp.httpvolly.VolleyConfig;
 
 
 /**
@@ -28,7 +38,7 @@ public class LPApplicationLike extends MultiDexApplication{
         super.onCreate();
         mApplication = this;
 
-      /*  LPCacheUtil.init(LPApplicationLike.getContext(), null);
+//        LPCacheUtil.init(LPApplicationLike.getContext(), null);
         VolleyConfig volleyConfig = new VolleyConfig();
         volleyConfig.setContext(mApplication.getApplicationContext());
         volleyConfig.setVersionCode(ActivityUtil.getVersionCode());
@@ -40,7 +50,7 @@ public class LPApplicationLike extends MultiDexApplication{
             StrictMode.setVmPolicy(builder.build());
         }
 
-        OssManager.getInstance().init(getContext(),Constants.OSS_ENDPOINT,Constants.OSS_BucketName,Constants.OSS_AccessKey,Constants.OSS_SecretKey);
+       /* OssManager.getInstance().init(getContext(),Constants.OSS_ENDPOINT,Constants.OSS_BucketName,Constants.OSS_AccessKey,Constants.OSS_SecretKey);
         //初始化APP
         InitBusinessHelper.initApp(LPApplicationLike.getContext());
         UMConfigure.init(this, Constants.UMENG_APPKEY,"umeng",UMConfigure.DEVICE_TYPE_PHONE,"");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
@@ -140,16 +150,13 @@ public class LPApplicationLike extends MultiDexApplication{
     public void setRoomInfo(LiveRoomInfo roomInfo) {
         this.roomInfo = roomInfo;
     }
-
+*/
     private void configuration(){
 
         int serverId = SharePreferenceUtil.getChoosedServer(getContext());
         if (serverId != -1){
             URLManager.SelectedServerType = (serverId == 0 ? 1 : 0);
-        }*//*else {
-            URLManager.SelectedServerType=getApplication().getResources().getInteger(R.integer.server_type);
-            serverId=getApplication().getResources().getInteger(R.integer.server_id);
-        }*//*
+        }
 
         Configuration config;
         if(URLManager.SelectedServerType==URLManager.ServerType_Production){
@@ -167,5 +174,5 @@ public class LPApplicationLike extends MultiDexApplication{
         URLManager.ServerURL_IM_FRIEND_REQUEST_QA = config.serverIMFriendUrl;
 
         ImageUrlManager.initialize(URLManager.ServerURL_Images_QA,URLManager.ServerURL_OF_QINIU_ChatImages_QA,URLManager.ServerURL_Images_Production_Deprecated,URLManager.ServerURL_Images_Production);
-    }*/
+    }
 }

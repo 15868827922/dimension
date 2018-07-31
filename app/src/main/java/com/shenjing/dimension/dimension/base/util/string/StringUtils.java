@@ -34,6 +34,15 @@ public class StringUtils {
         return TextUtils.isEmpty(string) ? "" : string;
     }
 
+    public static void copyToClipBoard(Context context, String text){
+        if(TextUtils.isEmpty(text) || context == null){
+            return;
+        }
+        ClipboardManager clip = (ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
+        clip.setText(text);
+        Toast.makeText(context, R.string.copy_tp_clip_finished, Toast.LENGTH_SHORT).show();
+    }
+
     public static String getDistanceString (Integer m) {
         if (m == null) {
             m = 0;

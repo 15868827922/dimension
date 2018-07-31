@@ -5,12 +5,20 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 import com.shenjing.dimension.R;
 public class SignDialog extends Dialog implements View.OnClickListener{
 
 
+    private Context mContext;
+
+    private View mViewMain;
+
     public SignDialog(@NonNull Context context) {
         super(context, R.style.CustomDialog);
+        this.mContext = context;
         initView();
     }
 
@@ -27,8 +35,22 @@ public class SignDialog extends Dialog implements View.OnClickListener{
     private void initView() {
         setContentView(R.layout.dialog_sign_in);
         setCanceledOnTouchOutside(true);
-        findViewById(R.id.view_main).setOnClickListener(this);
+        mViewMain = findViewById(R.id.view_main);
+        mViewMain.setOnClickListener(this);
         findViewById(R.id.btn_close_dialog).setOnClickListener(this);
+        Animation animation= AnimationUtils.loadAnimation(mContext,R.anim.player_double_click_animation);
+        mViewMain.startAnimation(animation);//开始动画
+        animation.setAnimationListener(new Animation.AnimationListener(){
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {//动画结束
+//                imageView.setVisibility(View.GONE);
+            }
+        });
+
     }
 
     @Override

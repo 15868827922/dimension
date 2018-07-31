@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unit_shape_bg_dialog"
+    android:orientation="vertical"
+    android:layout_gravity="center" >
+    
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/common_sw320dp_of_20"
+            android:paddingRight="@dimen/common_sw320dp_of_10"
+            android:paddingTop="@dimen/common_sw320dp_of_15"
+            android:paddingBottom="@dimen/common_sw320dp_of_15"
+            android:singleLine="true"
+            android:text="@string/tip"
+            android:textSize="@dimen/common_font_sw320dp_of_18"
+            android:textColor="@color/unit_text_tv_title_1" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_sw320dp_of_0p5"
+            android:layout_marginLeft="@dimen/common_sw320dp_of_10"
+            android:layout_marginRight="@dimen/common_sw320dp_of_10"
+            android:background="@color/unit_color_divider" />
+    
+    </LinearLayout>
+    
+    <ListView 
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/unit_color_divider"
+        android:dividerHeight="@dimen/divider"
+        android:drawSelectorOnTop="false"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@drawable/selector_white_item_hover"/>
+    
+</LinearLayout>

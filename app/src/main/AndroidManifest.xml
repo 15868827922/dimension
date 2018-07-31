@@ -2,13 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shenjing.dimension">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEM" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--
         <meta-data
         android:name="sdk_key_version_update_type"
         android:value="${CHANNEL_VALUE}" />
     -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".dimension.main.LPApplicationLike"
         android:allowBackup="true"
@@ -34,7 +39,8 @@
         <activity android:name=".dimension.me.AboutDimensionActivity" />
         <activity android:name=".dimension.me.ChangePassWordActivity" />
         <activity android:name=".dimension.me.MyWalletActivity" />
-        <activity android:name=".dimension.me.OrderManagerActivity"></activity>
+        <activity android:name=".dimension.me.OrderManagerActivity" />
+        <activity android:name=".dimension.me.FeedBackActivity"></activity>
     </application>
 
 </manifest>

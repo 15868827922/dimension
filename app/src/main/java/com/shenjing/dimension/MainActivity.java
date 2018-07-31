@@ -19,6 +19,13 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends FundmentalActivity implements TabHostNewView.OnTabClickListener{
 
+    // 定义自己的秘钥、位移量
+    public final static String Encryption_SecretKey = "A9e4/vnQTrKF6otAGbM6zGsulKEL7b3x";
+    public final static String Encryption_IV = "9mg+!7ed8b36*w`X";
+
+    // 提供要加密的数据
+    private String data = "android 加密解密测试";
+
     @Bind(R.id.tabHost)
     TabHostNewView tabHostNewView;
 

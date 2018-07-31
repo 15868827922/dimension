@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 1 线上环境 0 测试环境-->
+    <integer name="server_type">1</integer>
+    <!-- 测试环境的id
+     0 线上环境 (需server_type为0)
+     1 用于连接开发环境，请去configuration.java文件中修改
+     2-stable(cn133)
+     3-o2s
+     4-cs138
+     5-cs170
+     6-cslp
+     7 i-ole
+     8 107
+     9 231
+     10 csnb32
+     11 cs50
+     12 cs33
+     -->
+    <integer name="server_id">1</integer>
+
+    <!--此开关用于release包是否能可用kissevan切换，默认不能-->
+    <bool name="is_edit_enable">true</bool>
+</resources>

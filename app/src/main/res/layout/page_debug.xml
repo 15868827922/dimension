@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unit_shape_bg_dialog">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/dp_750_48"
+        android:paddingRight="@dimen/dp_750_48"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_750_20">
+
+            <LinearLayout
+                android:id="@+id/layoutDebug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnSwitchHttpOrHttps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/unit_selector_dialog_btn"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/dp_750_12"
+                    android:paddingTop="@dimen/dp_750_12"
+                    android:text="切换http/https请求协议"
+                    android:textColor="@color/unit_color_main"
+                    android:textSize="@dimen/sp_750_28" />
+
+                <Button
+                    android:id="@+id/btnTrustAllSvrForHttps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/unit_selector_dialog_btn"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/dp_750_12"
+                    android:paddingTop="@dimen/dp_750_12"
+                    android:text="信任所有服务器证书："
+                    android:textColor="@color/unit_color_main"
+                    android:textSize="@dimen/sp_750_28" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_750_12"
+                    android:paddingTop="@dimen/dp_750_12">
+
+                    <Button
+                        android:id="@+id/btnShowMethod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/unit_selector_dialog_btn"
+                        android:gravity="center"
+                        android:paddingRight="@dimen/dp_750_12"
+                        android:text="查看耗时方法"
+                        android:textColor="@color/unit_color_main"
+                        android:textSize="@dimen/sp_750_28" />
+
+                    <Button
+                        android:id="@+id/btnOpenLog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/unit_selector_dialog_btn"
+                        android:paddingRight="@dimen/dp_750_12"
+                        android:text="开启日志"
+                        android:textColor="@color/unit_color_main"
+                        android:textSize="@dimen/sp_750_28" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dp_750_12">
+
+                <Button
+                    android:id="@+id/btnCopyDbToSD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/unit_selector_dialog_btn"
+                    android:paddingRight="@dimen/dp_750_12"
+                    android:text="拷贝聊天数据库到sd卡"
+                    android:textColor="@color/unit_color_main"
+                    android:textSize="@dimen/sp_750_28" />
+
+                <Button
+                    android:id="@+id/copyDbFromSD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/unit_selector_dialog_btn"
+                    android:paddingRight="@dimen/dp_750_12"
+                    android:text="从sd卡拷贝数据库"
+                    android:textColor="@color/unit_color_main"
+                    android:textSize="@dimen/sp_750_28" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/btnApplyPatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/unit_selector_dialog_btn"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_750_36"
+                        android:paddingRight="@dimen/dp_750_12"
+                        android:text="加载本地补丁"
+                        android:textColor="@color/unit_color_main"
+                        android:textSize="@dimen/sp_750_28"
+                        android:paddingBottom="@dimen/dp_750_20"/>
+                    <Button
+                        android:id="@+id/btnCleanPatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/unit_selector_dialog_btn"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_750_36"
+                        android:paddingRight="@dimen/dp_750_12"
+                        android:text="清除本地补丁"
+                        android:textColor="@color/unit_color_main"
+                        android:textSize="@dimen/sp_750_28"
+                        android:paddingTop="@dimen/dp_750_20"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_server_selector"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/dp_750_24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="环境切换"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <TextView
+                    android:id="@+id/textServerSelector"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dp_750_24"
+                    android:gravity="right|center_vertical"
+                    android:text="正式环境"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_750_28" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_750_24"
+                    android:layout_height="@dimen/dp_750_24"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_750_24"
+                    android:src="@mipmap/icon_arrow_gray" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textMainServerTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="主服务器"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <EditText
+                    android:id="@+id/inputMainServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textMainServerTip"
+                    android:background="@drawable/shape_light_input_bg_without_corners"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:singleLine="true"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textImageServerTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="图片服务"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <EditText
+                    android:id="@+id/inputImageServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textImageServerTip"
+                    android:background="@drawable/shape_light_input_bg_without_corners"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:singleLine="true"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textResourceServerTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="资源服务"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <EditText
+                    android:id="@+id/inputResourceServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textResourceServerTip"
+                    android:background="@drawable/shape_light_input_bg_without_corners"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:singleLine="true"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textOfflineMsgServerTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="离线消息"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <EditText
+                    android:id="@+id/inputOfflineMsgServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textOfflineMsgServerTip"
+                    android:background="@drawable/shape_light_input_bg_without_corners"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:singleLine="true"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textIMFriendTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="好友拉取"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <EditText
+                    android:id="@+id/inputIMFriendServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textIMFriendTip"
+                    android:background="@drawable/shape_light_input_bg_without_corners"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:singleLine="true"
+                    android:textColor="@color/text_light_gray"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_sw320dp_of_40"
+                android:layout_marginTop="@dimen/common_sw320dp_of_10">
+
+                <TextView
+                    android:id="@+id/textChannelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Channel"
+                    android:textColor="@color/text_light_gray"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+                <TextView
+                    android:id="@+id/textChannel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/common_sw320dp_of_8"
+                    android:layout_toRightOf="@+id/textChannelTitle"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_sw320dp_of_5"
+                    android:paddingRight="@dimen/common_sw320dp_of_5"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/unit_text_tv_title_2"
+                    android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textMoreInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_sw320dp_of_20"
+                android:textColor="@color/text_light_gray"
+                android:textSize="@dimen/common_font_sw320dp_of_13" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
