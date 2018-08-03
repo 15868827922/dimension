@@ -39,6 +39,11 @@ public class OrderManagerActivity extends BaseActivity implements RadioGroup.OnC
     @Bind(R.id.radioRight)
     RadioButton mRadioButtonRight;
 
+    private OrderListFragment mOrderFragmentAll;
+    private OrderListFragment mOrderFragmentRecharge;
+    private OrderListFragment mOrderFragmentPay;
+    private OrderListFragment mOrderFragmentRecord;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,45 +80,40 @@ public class OrderManagerActivity extends BaseActivity implements RadioGroup.OnC
         hideAllFragment(transaction);
         switch (tabPosition) {
             case 1:
-                OrderListFragment orderListFragment= getFragmentByTag(OrderListFragment.TAG);
-                if(orderListFragment == null){
-                    orderListFragment = new OrderListFragment();
-                    transaction.add(R.id.content, orderListFragment, RestFragment.TAG);
+                if(mOrderFragmentAll == null){
+                    mOrderFragmentAll = new OrderListFragment();
+                    transaction.add(R.id.content, mOrderFragmentAll, OrderListFragment.TAG_ALL);
                 }else{
-                    transaction.show(orderListFragment);
+                    transaction.show(mOrderFragmentAll);
                 }
                 transaction.commitAllowingStateLoss();
                 break;
             case 2:
 
-                GameFragment gameFragment= getFragmentByTag(GameFragment.TAG);
-                if(gameFragment == null){
-                    gameFragment = new GameFragment();
-                    transaction.add(R.id.content, gameFragment, GameFragment.TAG);
+                if(mOrderFragmentRecharge == null){
+                    mOrderFragmentRecharge = new OrderListFragment();
+                    transaction.add(R.id.content, mOrderFragmentRecharge, OrderListFragment.TAG_RECHARGE);
                 }else{
-                    transaction.show(gameFragment);
+                    transaction.show(mOrderFragmentRecharge);
                 }
-//                tabMeFragment.adjustScrollState();
                 transaction.commitAllowingStateLoss();
                 break;
             case 3:
-                SupplyFragment supplyFragment=getFragmentByTag(SupplyFragment.TAG);
-                if(supplyFragment == null){
-                    supplyFragment = new SupplyFragment();
-                    transaction.add(R.id.content, supplyFragment, SupplyFragment.TAG);
+                if(mOrderFragmentPay == null){
+                    mOrderFragmentPay = new OrderListFragment();
+                    transaction.add(R.id.content, mOrderFragmentPay, OrderListFragment.TAG_PAY);
                 }else{
-                    transaction.show(supplyFragment);
+                    transaction.show(mOrderFragmentPay);
                 }
                 transaction.commitAllowingStateLoss();
                 break;
             case 4:
 
-                MyFragment myFragment = getFragmentByTag(MyFragment.TAG);
-                if (myFragment == null) {
-                    myFragment = new MyFragment();
-                    transaction.add(R.id.content, myFragment, MyFragment.TAG);
-                } else {
-                    transaction.show(myFragment);
+                if(mOrderFragmentRecord == null){
+                    mOrderFragmentRecord = new OrderListFragment();
+                    transaction.add(R.id.content, mOrderFragmentRecord, OrderListFragment.TAG_ALL);
+                }else{
+                    transaction.show(mOrderFragmentRecord);
                 }
                 transaction.commitAllowingStateLoss();
                 break;
