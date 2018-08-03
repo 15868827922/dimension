@@ -1,2 +1,3 @@
 include ':app'
-include "::swipebacklib"
+include ":swipebacklib"
+include ":httpvolley",":imagecompressor"
