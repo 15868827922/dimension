@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dimension.me.MyBackpackActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@mipmap/bg_my_task_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_130"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_750_30"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_750_100"
+                android:layout_gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/img_back_for_grab"
+                    android:layout_width="@dimen/dp_750_88"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/unit_selector_bg_view_init_transparent"
+                    android:paddingLeft="@dimen/dp_750_33"
+                    android:paddingRight="@dimen/dp_750_33"
+                    android:paddingTop="@dimen/dp_750_24"
+                    android:paddingBottom="@dimen/dp_750_24"
+                    android:src="@mipmap/icon_back_arrow_left_white"
+                    android:layout_marginLeft="@dimen/dp_750_24"/>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_centerInParent="true"
+                    android:text="我的任务"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_750_40"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_220">
+            <com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView
+                android:id="@+id/img_user_header"
+                android:layout_width="@dimen/dp_750_142"
+                android:layout_height="@dimen/dp_750_142"
+                app:riv_corner_radius="@dimen/dp_750_50"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/default_image_header"
+                android:layout_marginLeft="@dimen/dp_750_88"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img_user_header"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_750_44"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="名字"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_750_30" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp_750_20">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_750_16"
+                        android:layout_height="@dimen/dp_750_20"
+                        android:background="@mipmap/icon_my_coin_num_tip"
+                        android:layout_marginTop="@dimen/dp_750_3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="22334"
+                        android:textSize="@dimen/sp_750_24"
+                        android:layout_marginLeft="@dimen/dp_750_6"/>
+                    <View
+                        android:layout_width="@dimen/dp_750_2"
+                        android:layout_height="@dimen/dp_750_18"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_750_18"
+                        android:layout_marginRight="@dimen/dp_750_18"
+                        android:background="@color/white"/>
+                    <ImageView
+                        android:layout_width="@dimen/dp_750_22"
+                        android:layout_height="@dimen/dp_750_20"
+                        android:background="@mipmap/icon_score_num_tip"
+                        android:layout_marginTop="@dimen/dp_750_3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="456345"
+                        android:textSize="@dimen/sp_750_24"
+                        android:layout_marginLeft="@dimen/dp_750_6"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_130"
+        android:layout_below="@+id/view_top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

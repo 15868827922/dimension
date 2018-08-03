@@ -57,4 +57,14 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <!-- 自定义Dialog，用于活动页 -->
+    <style name="Activity_Show" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

@@ -11,4 +11,10 @@
     <string name="btn_cancel">取消</string>
     <string name="btn_ok">确定</string>
     <string name="copy_tp_clip_finished">已复制到剪切板</string>
+    <string name="over_the_max_size">最多能选%$d张图片</string>
+    <string name="use_default_profile">使用默认头像</string>
+    <string name="choose_photo">选择照片</string>
+    <string name="take_photo">拍照</string>
+    <string name="album">相册</string>
+    <string name="view">"查看"</string>
 </resources>

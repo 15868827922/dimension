@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_sheet_text_item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_sw320dp_of_50"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:textColor="@color/unit_text_tv_title_1"
+    android:textSize="@dimen/common_font_sw320dp_of_15" />

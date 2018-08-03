@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/dp_750_224"
+        android:layout_height="@dimen/dp_750_172"
+        android:background="@mipmap/icon_internet_error"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络君失联啦 ﾍ(;´Д｀ﾍ)"
+        android:textSize="@dimen/sp_750_30"
+        android:textColor="#FF666666"
+        android:layout_marginTop="@dimen/dp_750_34"/>
+
+</LinearLayout>

@@ -5,6 +5,8 @@ package com.shenjing.dimension.dimension.base.request;
  * Desc:
  */
 
+import android.text.TextUtils;
+
 import com.shenjing.dimension.dimension.base.cathe.SharePreferenceUtil;
 import com.shenjing.dimension.dimension.main.LPApplicationLike;
 
@@ -103,8 +105,32 @@ public class URLManager {
 
 
 
+    /**
+     * 判断是否是刷脸可识别url，刷脸有图片加载等协议，可能不会兼容仅以www开头的url
+     * @param url
+     * @return
+     */
+    public static boolean isSlOkWebUrl(String url){
+        try {
+            return url.toLowerCase().startsWith(HTTP_STR) || url.toLowerCase().startsWith(HTTPS_STR);
+        } catch (Exception e){
+            return false;
+        }
+    }
 
 
+    /**
+     * 展示图片时的映射
+     * @param originUrl
+     * @return
+     */
+    public static String getFixedShowImageUrl(String originUrl){
+        if(TextUtils.isEmpty(originUrl)){
+            return originUrl;
+        }else{
+            return originUrl.replaceFirst(ServerURL_Images_Production_Deprecated, ServerURL_Images_Production);
+        }
+    }
 
 
     /****************************************************

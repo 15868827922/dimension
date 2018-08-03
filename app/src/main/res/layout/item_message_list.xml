@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2018/07/31"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_750_40"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_750_22"
+        android:background="@drawable/shape_bg_order"
+        android:paddingLeft="@dimen/dp_750_11"
+        android:paddingRight="@dimen/dp_750_22"
+        android:layout_marginLeft="@dimen/dp_750_26"
+        android:layout_marginRight="@dimen/dp_750_26"
+        android:layout_marginTop="@dimen/dp_750_22"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/dp_750_2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_70"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_750_16">
+            <ImageView
+                android:layout_width="@dimen/dp_750_42"
+                android:layout_height="@dimen/dp_750_42"
+                android:src="@mipmap/icon_image_app"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次元管理局助手"
+                android:layout_weight="1"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:textSize="@dimen/sp_750_24"
+                android:layout_marginLeft="@dimen/dp_750_12"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.shenjing.dimension.dimension.base.image.LPNetworkImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_750_250"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/dp_750_8"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -18,6 +18,9 @@ import com.shenjing.dimension.dimension.base.request.URLManager;
 import com.shenjing.dimension.dimension.base.request.aes.AES;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
 import com.shenjing.dimension.dimension.main.LPApplicationLike;
+import com.shenjing.dimension.dimension.me.FeedBackActivity;
+import com.shenjing.dimension.dimension.me.MyBackpackActivity;
+import com.shenjing.dimension.dimension.me.MyMessageActivity;
 import com.shenjing.dimension.dimension.me.MyWalletActivity;
 import com.shenjing.dimension.dimension.me.SettingActivity;
 import com.shenjing.dimension.dimension.me.view.SignDialog;
@@ -108,10 +111,12 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 ActivityUtil.gotoActivity(getActivity(), MyWalletActivity.class);
                 break;
             case R.id.view_my_backpack:  //我的背包
+                ActivityUtil.gotoActivity(getActivity(), MyBackpackActivity.class);
                 break;
             case R.id.view_score_mall:  //我的任务
                 break;
             case R.id.view_my_message:  //我的消息
+                ActivityUtil.gotoActivity(getActivity(), MyMessageActivity.class);
                 break;
             case R.id.view_my_order:  //我的订单
                 break;
@@ -123,6 +128,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
             case R.id.view_give_mark:  //评分
                 break;
             case R.id.view_give_feedback:  //意见反馈
+                ActivityUtil.gotoActivity(getActivity(), FeedBackActivity.class);
                 break;
             case R.id.img_is_sign:  //签到
                 showSignDialog();

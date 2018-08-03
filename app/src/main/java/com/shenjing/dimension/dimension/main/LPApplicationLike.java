@@ -50,6 +50,10 @@ public class LPApplicationLike extends MultiDexApplication{
             StrictMode.setVmPolicy(builder.build());
         }
 
+       /* MyAppGlideModule myAppGlideModule = new MyAppGlideModule();
+        myAppGlideModule.registerComponents(getContext(),Glide.get(getContext()),new Registry());*/
+//        myAppGlideModule.registerComponents(this,new Glide(),);
+
        /* OssManager.getInstance().init(getContext(),Constants.OSS_ENDPOINT,Constants.OSS_BucketName,Constants.OSS_AccessKey,Constants.OSS_SecretKey);
         //初始化APP
         InitBusinessHelper.initApp(LPApplicationLike.getContext());

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="drag_handle" type="id"/>
+    
+    <!-- 侧滑菜单 -->
+    <item name="selected_view" type="id"/>
+    
+    <!-- RefreshListLayout中的ListView -->
+    <item name="listView_of_refresh" type="id"/>
+    
+    <item name="banner_pointContainerId" type="id" />
+
+    
+    <item name="empty_view" type="id"></item>
+
+    <item name="viewpager" type="id"></item>
+
+    <item name="list_position" type="id"/>
+    <item name="list_tag" type="id"/>
+
+    <item name="common_loading_view" type="id"/>
+    <item name="common_recycler_view" type="id"/>
+    <item name="common_refresh_list" type="id"/>
+    <item name="common_list_view" type="id"/>
+    <item name="common_pull_layout" type="id"></item>
+
+    <item name="rv_item_tag" type="id"></item>
+
+    <item name="rv_item_position" type="id"></item>
+
+    <!-- 小插件ImageView点击Tag -->
+    <item name="key_image_click" type="id" />
+</resources>

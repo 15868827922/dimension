@@ -1,9 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dimension.me.FeedBackActivity">
+    tools:context=".dimension.me.FeedBackActivity"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_50"
+            android:paddingLeft="@dimen/dp_750_26"
+            android:gravity="center_vertical"
+            android:background="@color/unit_view_stub">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*  "
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_main_tip"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择您想反馈的问题点"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_3"/>
+        </LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_50"
+            android:paddingLeft="@dimen/dp_750_26"
+            android:gravity="center_vertical"
+            android:background="@color/unit_view_stub">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*  "
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_main_tip"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请补充详细问题和意见"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_3"/>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/view_input_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_250"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_750_48"
+            android:layout_marginLeft="@dimen/dp_750_26"
+            android:layout_marginRight="@dimen/dp_750_26"
+            android:layout_marginBottom="@dimen/dp_750_32"
+            android:background="@drawable/shape_bg_order">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edt_input_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_750_88"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/unit_edt_hint_text"
+                    android:hint="emmmm...写点什么好呢？？"
+                    android:textColor="@color/unit_text_tv_title_1"
+                    android:background="@null"
+                    android:maxLength="35"
+                    android:gravity="left"
+                    android:textSize="@dimen/sp_750_24"
+                    android:padding="@dimen/dp_750_12"/>
+
+                <TextView
+                    android:id="@+id/tv_text_num_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/unit_text_main_tip_2"
+                    android:text="( 0/150  最多输入150个字)"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_750_20"
+                    android:textSize="@dimen/sp_750_20"
+                    android:paddingBottom="@dimen/dp_750_20"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_50"
+            android:paddingLeft="@dimen/dp_750_26"
+            android:gravity="center_vertical"
+            android:background="@color/unit_view_stub">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请提供相关问题的截图或照片"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/4"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_3"
+                android:paddingRight="@dimen/dp_750_26"/>
+        </LinearLayout>
+
+        <com.shenjing.dimension.dimension.view.ExpandedGridView
+            android:id="@+id/picture_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@color/white"
+            android:numColumns="4"
+            android:verticalSpacing="@dimen/dp_750_16"
+            android:stretchMode="columnWidth"
+            android:layout_marginLeft="@dimen/dp_750_24"
+            android:layout_marginRight="@dimen/dp_750_24"
+            android:layout_marginTop="@dimen/dp_750_32"
+            android:layout_marginBottom="@dimen/dp_750_32"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_50"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_750_26"
+            android:text="请留下您的联系方式"
+            android:textSize="@dimen/sp_750_24"
+            android:textColor="@color/unit_text_tv_title_3"
+            android:background="@color/unit_view_stub"/>
+
+        <RelativeLayout
+            android:id="@+id/view_input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_88"
+            android:layout_marginTop="@dimen/dp_750_32"
+            android:layout_marginLeft="@dimen/dp_750_26"
+            android:layout_marginRight="@dimen/dp_750_26"
+            android:layout_marginBottom="@dimen/dp_750_32"
+            android:background="@drawable/shape_bg_white_input">
+
+            <EditText
+                android:id="@+id/edt_input_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_750_88"
+                android:layout_weight="1"
+                android:textColorHint="@color/unit_edt_hint_text"
+                android:hint="请输入新手机号"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:background="@null"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textSize="@dimen/sp_750_24"
+                android:paddingLeft="@dimen/dp_750_36"
+                android:singleLine="true"/>
+            <ImageView
+                android:id="@+id/view_delete_phone"
+                android:layout_width="@dimen/dp_750_60"
+                android:layout_height="@dimen/dp_750_60"
+                android:src="@mipmap/icon_delete_gray"
+                android:padding="@dimen/dp_750_15"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_750_19"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_50"
+            android:paddingLeft="@dimen/dp_750_26"
+            android:gravity="center_vertical"
+            android:background="@color/unit_view_stub">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请提供相关问题的截图或照片"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_3"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_arrow_gray"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

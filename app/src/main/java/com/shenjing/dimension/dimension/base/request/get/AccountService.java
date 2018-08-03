@@ -82,7 +82,7 @@ public class AccountService {
      * @param reLogin 是否需要重新登陆
      */
     public static void logout(Context context, boolean reLogin){
-        LPCacheUtil.exit(LPApplicationLike.getContext());
+//        LPCacheUtil.exit(LPApplicationLike.getContext());
         /*UserInfo userInfo = LPApplicationLike.getInstance().getUserInfo();
         if (!reLogin){
 //            IMProxy.reqDisconnect(context);

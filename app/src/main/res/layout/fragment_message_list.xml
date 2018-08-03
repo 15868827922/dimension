@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jwenfeng.library.pulltorefresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_refresh"
+    android:layout_weight="1"
+    app:view_error="@layout/layout_app_error"
+    app:view_empty="@layout/layout_app_empty">
+
+    <ListView
+        android:id="@+id/view_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
+</com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>

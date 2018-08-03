@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.shenjing.dimension">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEM" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <!--
         <meta-data
         android:name="sdk_key_version_update_type"
         android:value="${CHANNEL_VALUE}" />
     -->
+
+    <meta-data
+        android:name="com.shenjing.dimension.dimension.base.util.MyGlideModule"
+        tools:node="remove" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -21,7 +28,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBarForMain">
+        android:theme="@style/AppTheme.NoActionBarForMain"
+        tools:replace="android:icon, android:theme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +48,10 @@
         <activity android:name=".dimension.me.ChangePassWordActivity" />
         <activity android:name=".dimension.me.MyWalletActivity" />
         <activity android:name=".dimension.me.OrderManagerActivity" />
-        <activity android:name=".dimension.me.FeedBackActivity"></activity>
+        <activity android:name=".dimension.me.FeedBackActivity" />
+        <activity android:name=".dimension.me.MyMessageActivity" />
+        <activity android:name=".dimension.me.MyBackpackActivity"/>
+        <activity android:name=".dimension.me.MyTaskActivity"/>
     </application>
 
 </manifest>
