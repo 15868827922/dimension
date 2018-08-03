@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="#30000000" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/common_sw320dp_of_8"
+        android:bottomRightRadius="@dimen/common_sw320dp_of_8"
+        android:topLeftRadius="@dimen/common_sw320dp_of_8"
+        android:topRightRadius="@dimen/common_sw320dp_of_8" />
+
+</shape>

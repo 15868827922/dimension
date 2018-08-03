@@ -1,13 +1,12 @@
 package com.shenjing.dimension.dimension.me;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.shenjing.dimension.R;
-import com.shenjing.dimension.dimension.base.activity.BaseActivity;
+import com.shenjing.dimension.dimension.base.activity.FundmentalActivity;
 
 import butterknife.ButterKnife;
 
-public class MyBackpackActivity extends BaseActivity {
+public class MyBackpackActivity extends FundmentalActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -21,6 +21,7 @@ import com.shenjing.dimension.dimension.main.LPApplicationLike;
 import com.shenjing.dimension.dimension.me.FeedBackActivity;
 import com.shenjing.dimension.dimension.me.MyBackpackActivity;
 import com.shenjing.dimension.dimension.me.MyMessageActivity;
+import com.shenjing.dimension.dimension.me.MyTaskActivity;
 import com.shenjing.dimension.dimension.me.MyWalletActivity;
 import com.shenjing.dimension.dimension.me.SettingActivity;
 import com.shenjing.dimension.dimension.me.view.SignDialog;
@@ -87,6 +88,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 ActivityUtil.gotoActivity(getActivity(), SettingActivity.class);
                 break;
             case R.id.view_my_task:  //我的任务
+                ActivityUtil.gotoActivity(getActivity(), MyTaskActivity.class);
                 /*// 解密
                 String decrypted = null;
                 try {
@@ -96,16 +98,16 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                     e.printStackTrace();
                 }*/
 
-                try {
+               /* try {
                     AES mAes = new AES();
-                 /*   mBytes = mString.getBytes("UTF8");
+                 *//*   mBytes = mString.getBytes("UTF8");
                     String enString = mAes.encrypt(mBytes);
-                    mTvId.setText("加密后：" + enString);*/
+                    mTvId.setText("加密后：" + enString);*//*
                     String deString = mAes.decrypt("MS4yMzQ1Njc4MTIzNDU3RSsxNQ==");
                     mTvUserName.setText("解密后：" + deString);
                 } catch (Exception e) {
                     Log.i("qing", "MainActivity----catch");
-                }
+                }*/
                 break;
             case R.id.view_my_wallet:  //我的钱包
                 ActivityUtil.gotoActivity(getActivity(), MyWalletActivity.class);
@@ -113,7 +115,8 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
             case R.id.view_my_backpack:  //我的背包
                 ActivityUtil.gotoActivity(getActivity(), MyBackpackActivity.class);
                 break;
-            case R.id.view_score_mall:  //我的任务
+            case R.id.view_score_mall:  //积分商城
+
                 break;
             case R.id.view_my_message:  //我的消息
                 ActivityUtil.gotoActivity(getActivity(), MyMessageActivity.class);

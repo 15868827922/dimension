@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    api "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
 }
 
 

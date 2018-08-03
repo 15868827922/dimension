@@ -8,7 +8,10 @@ import com.shenjing.dimension.dimension.base.fragment.FragmentBase;
 
 public class OrderListFragment extends FragmentBase {
 
-    public static final String TAG="OrderListFragment";
+    public static final String TAG_ALL="OrderListFragmentAll";
+    public static final String TAG_RECHARGE="OrderListFragmentRecharge";
+    public static final String TAG_PAY="OrderListFragmentPay";
+    public static final String TAG_RECORD="OrderListFragmentRecord";
     @Override
     public int getContentLayout() {
         return R.layout.fragment_rest;
