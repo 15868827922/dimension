@@ -1,28 +1,23 @@
 package com.shenjing.dimension.dimension.main.fragent;
 
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.jwenfeng.library.pulltorefresh.ViewStatus;
 import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.fragment.FragmentBase;
 import com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView;
-import com.shenjing.dimension.dimension.base.request.AesUtils;
 import com.shenjing.dimension.dimension.base.request.HttpRequestCallback;
 import com.shenjing.dimension.dimension.base.request.RequestMap;
-import com.shenjing.dimension.dimension.base.request.URLManager;
-import com.shenjing.dimension.dimension.base.request.aes.AES;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
-import com.shenjing.dimension.dimension.main.LPApplicationLike;
 import com.shenjing.dimension.dimension.me.FeedBackActivity;
 import com.shenjing.dimension.dimension.me.MyBackpackActivity;
 import com.shenjing.dimension.dimension.me.MyMessageActivity;
 import com.shenjing.dimension.dimension.me.MyTaskActivity;
 import com.shenjing.dimension.dimension.me.MyWalletActivity;
+import com.shenjing.dimension.dimension.me.ScoreMallActivity;
 import com.shenjing.dimension.dimension.me.SettingActivity;
 import com.shenjing.dimension.dimension.me.view.SignDialog;
 import com.zjlp.httpvolly.HttpService;
@@ -60,6 +55,8 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
     @Override
     public void initView(@Nullable View view) {
         ButterKnife.bind(this,view);
+
+
 
         findViewById(R.id.img_is_sign).setOnClickListener(this);
         findViewById(R.id.view_my_task).setOnClickListener(this);
@@ -116,6 +113,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 ActivityUtil.gotoActivity(getActivity(), MyBackpackActivity.class);
                 break;
             case R.id.view_score_mall:  //积分商城
+                ActivityUtil.gotoActivity(getActivity(), ScoreMallActivity.class);
 
                 break;
             case R.id.view_my_message:  //我的消息
@@ -148,17 +146,17 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
 
 
     private void reqAddressList(){
-        String url = URLManager.getRequestURL(URLManager.Method_Address_list);
+        String url = /*URLManager.getRequestURL(URLManager.Method_Address_list)*/"http://192.168.0.157/register";
         requestMap.cancel(url);
         JSONObject jsonObject = new JSONObject();
-//        try {
-//            jsonObject.put("uid", LPApplicationLike.getUserId());
-//            jsonObject.put("token",LPApplicationLike.getUserToken());
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            jsonObject.put("user_name", "15868827922");
+            jsonObject.put("user_password","123456");
+            jsonObject.put("login_type","mobile");
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         HttpRequestCallback callback = new HttpRequestCallback(getActivity()) {
             @Override
             public void onFinished(JSONObject jsonObject) {

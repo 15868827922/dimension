@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
     </FrameLayout>
 
-    <com.shenjing.dimension.dimension.me.TabHostNewView
+    <com.shenjing.dimension.dimension.me.view.TabHostNewView
         android:id="@+id/tabHost"
         android:layout_height="@dimen/common_sw320dp_of_50"
         android:layout_width="match_parent"

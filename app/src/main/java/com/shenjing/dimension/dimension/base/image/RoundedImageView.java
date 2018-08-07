@@ -87,7 +87,7 @@ public class RoundedImageView extends ImageView {
   public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
 
-    TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedImageView, defStyle, 0);
+    TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedImageViewNew, defStyle, 0);
 
     int index = a.getInt(R.styleable.RoundedImageView_android_scaleType, -1);
     if (index >= 0) {
@@ -97,8 +97,8 @@ public class RoundedImageView extends ImageView {
       setScaleType(ScaleType.FIT_CENTER);
     }
 
-    cornerRadius = a.getDimensionPixelSize(R.styleable.RoundedImageView_riv_corner_radius, -1);
-    borderWidth = a.getDimensionPixelSize(R.styleable.RoundedImageView_riv_border_width, -1);
+    cornerRadius = a.getDimensionPixelSize(R.styleable.RoundedImageViewNew_riv_new_corner_radius, -1);
+    borderWidth = a.getDimensionPixelSize(R.styleable.RoundedImageViewNew_riv_new_border_width, -1);
 
     // don't allow negative values for radius and border
     if (cornerRadius < 0) {
@@ -108,30 +108,30 @@ public class RoundedImageView extends ImageView {
       borderWidth = DEFAULT_BORDER_WIDTH;
     }
 
-    borderColor = a.getColorStateList(R.styleable.RoundedImageView_riv_border_color);
+    borderColor = a.getColorStateList(R.styleable.RoundedImageViewNew_riv_new_border_color);
     if (borderColor == null) {
       borderColor = ColorStateList.valueOf(RoundedDrawable.DEFAULT_BORDER_COLOR);
     }
 
-    mutateBackground = a.getBoolean(R.styleable.RoundedImageView_riv_mutate_background, false);
-    isOval = a.getBoolean(R.styleable.RoundedImageView_riv_oval, false);
+    mutateBackground = a.getBoolean(R.styleable.RoundedImageViewNew_riv_new_mutate_background, false);
+    isOval = a.getBoolean(R.styleable.RoundedImageViewNew_riv_new_oval, false);
       isCornerLT = a.getBoolean(R.styleable.RoundedImageView_riv_corner_lt, true);
       isCornerRT = a.getBoolean(R.styleable.RoundedImageView_riv_corner_rt, true);
       isCornerLB = a.getBoolean(R.styleable.RoundedImageView_riv_corner_lb, true);
       isCornerRB = a.getBoolean(R.styleable.RoundedImageView_riv_corner_rb, true);
 
-    final int tileMode = a.getInt(R.styleable.RoundedImageView_riv_tile_mode, TILE_MODE_UNDEFINED);
+    final int tileMode = a.getInt(R.styleable.RoundedImageViewNew_riv_new_tile_mode, TILE_MODE_UNDEFINED);
     if (tileMode != TILE_MODE_UNDEFINED) {
       setTileModeX(parseTileMode(tileMode));
       setTileModeY(parseTileMode(tileMode));
     }
 
-    final int tileModeX = a.getInt(R.styleable.RoundedImageView_riv_tile_mode_x, TILE_MODE_UNDEFINED);
+    final int tileModeX = a.getInt(R.styleable.RoundedImageViewNew_riv_new_tile_mode_x, TILE_MODE_UNDEFINED);
     if (tileModeX != TILE_MODE_UNDEFINED) {
       setTileModeX(parseTileMode(tileModeX));
     }
 
-    final int tileModeY = a.getInt(R.styleable.RoundedImageView_riv_tile_mode_y, TILE_MODE_UNDEFINED);
+    final int tileModeY = a.getInt(R.styleable.RoundedImageViewNew_riv_new_tile_mode_y, TILE_MODE_UNDEFINED);
     if (tileModeY != TILE_MODE_UNDEFINED) {
       setTileModeY(parseTileMode(tileModeY));
     }

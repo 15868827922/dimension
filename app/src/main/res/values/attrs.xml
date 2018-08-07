@@ -25,5 +25,12 @@
         <attr name="insetBottom" format="dimension|reference" />
     </declare-styleable>
 
+    <declare-styleable name="SquareView">
+        <attr name="spec" format="enum">
+            <enum name="byWidth" value="0"></enum>
+            <enum name="byHeight" value="1"></enum>
+        </attr>
+        <attr name="ratio" format="float"></attr>
+    </declare-styleable>
 
 </resources>

@@ -65,7 +65,7 @@ public class TaskListFragment extends FragmentBase {
         });
 
 
-        mAdapter=new LPListViewAdapter<MessageInfo>(getActivity(),mList,mListView,R.layout.item_message_list) {
+        mAdapter=new LPListViewAdapter<MessageInfo>(getActivity(),mList,mListView,R.layout.item_my_task) {
 
             @Override
             public void onConvert(LPViewHolder<MessageInfo> viewHolder, int position, MessageInfo mItem) {

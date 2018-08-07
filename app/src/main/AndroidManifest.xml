@@ -50,8 +50,9 @@
         <activity android:name=".dimension.me.OrderManagerActivity" />
         <activity android:name=".dimension.me.FeedBackActivity" />
         <activity android:name=".dimension.me.MyMessageActivity" />
-        <activity android:name=".dimension.me.MyBackpackActivity"/>
-        <activity android:name=".dimension.me.MyTaskActivity"/>
+        <activity android:name=".dimension.me.MyBackpackActivity" />
+        <activity android:name=".dimension.me.MyTaskActivity" />
+        <activity android:name=".dimension.me.ScoreMallActivity"></activity>
     </application>
 
 </manifest>

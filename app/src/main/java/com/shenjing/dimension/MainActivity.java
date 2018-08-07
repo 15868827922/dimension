@@ -10,7 +10,7 @@ import com.shenjing.dimension.dimension.main.fragent.GameFragment;
 import com.shenjing.dimension.dimension.main.fragent.MyFragment;
 import com.shenjing.dimension.dimension.main.fragent.RestFragment;
 import com.shenjing.dimension.dimension.main.fragent.SupplyFragment;
-import com.shenjing.dimension.dimension.me.TabHostNewView;
+import com.shenjing.dimension.dimension.me.view.TabHostNewView;
 
 import java.util.List;
 

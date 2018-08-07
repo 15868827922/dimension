@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.shenjing.dimension.dimension.view.SquareView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ratio="1.37">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_750_200"
+                android:background="@mipmap/bg_my_task_top"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="娃娃名称娃娃名称"
+                android:textSize="@dimen/sp_750_24"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:layout_marginTop="@dimen/dp_750_20"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_750_18"
+                android:layout_marginBottom="@dimen/dp_750_2"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="@dimen/dp_750_22"
+                    android:layout_height="@dimen/dp_750_20"
+                    android:src="@mipmap/icon_score_num_tip"
+                    android:layout_marginTop="@dimen/dp_750_2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="233"
+                    android:textColor="@color/unit_text_tv_title_1"
+                    android:textSize="@dimen/sp_750_24"
+                    android:layout_marginLeft="@dimen/dp_750_6"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.shenjing.dimension.dimension.view.SquareView>
+</LinearLayout>

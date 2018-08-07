@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/view_refresh"
-    android:layout_weight="1"
     app:view_error="@layout/layout_app_error"
     app:view_empty="@layout/layout_app_empty">
 

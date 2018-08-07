@@ -27,7 +27,7 @@
                 android:layout_height="@dimen/dp_750_100"
                 android:layout_gravity="center_vertical">
                 <ImageView
-                    android:id="@+id/img_back_for_grab"
+                    android:id="@+id/img_back_for_backpack"
                     android:layout_width="@dimen/dp_750_88"
                     android:layout_height="match_parent"
                     android:background="@drawable/unit_selector_bg_view_init_transparent"
@@ -127,8 +127,10 @@
     <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/view_top">
-        <ListView
+        android:layout_below="@+id/view_top"
+        android:layout_marginBottom="@dimen/dp_750_126">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/view_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
@@ -137,8 +139,9 @@
         android:layout_height="@dimen/dp_750_100"
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/dp_750_26"
-        android:background="@drawable/shape_bg_for_orperation">
+        android:background="@drawable/shape_bg_for_operation">
         <LinearLayout
+            android:id="@+id/view_convert_score"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -164,6 +167,7 @@
             android:layout_marginTop="@dimen/dp_750_10"
             android:layout_marginBottom="@dimen/dp_750_10"/>
         <LinearLayout
+            android:id="@id/view_score_mall"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -178,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/unit_text_tv_title_1"
-                android:layout_marginLeft="@dimen/dp_750_6"
+                android:layout_marginLeft="@dimen/dp_750_8"
                 android:text="积分商场"
                 android:textSize="@dimen/sp_750_30"/>
         </LinearLayout>
@@ -189,6 +193,7 @@
             android:layout_marginTop="@dimen/dp_750_10"
             android:layout_marginBottom="@dimen/dp_750_10"/>
         <LinearLayout
+            android:id="@+id/view_apply_send"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -203,7 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/unit_text_tv_title_1"
-                android:layout_marginLeft="@dimen/dp_750_6"
+                android:layout_marginLeft="@dimen/dp_750_8"
                 android:text="申请发货"
                 android:textSize="@dimen/sp_750_30"/>
         </LinearLayout>
