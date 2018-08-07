@@ -4,16 +4,23 @@ import android.content.Context;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
 
+import com.MD5;
 import com.android.volley.NoConnectionError;
 import com.android.volley.VolleyError;
 import com.shenjing.dimension.dimension.base.network.NetworkState;
+import com.shenjing.dimension.dimension.base.request.aes.Base64Decoder;
 import com.zjlp.httpvolly.BaseRequestCallback;
 import com.zjlp.httpvolly.RequestError;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.shenjing.dimension.R;
 import com.zjlp.httpvolly.log.LPLog;
+
+import java.text.SimpleDateFormat;
+import java.util.Base64;
+import java.util.Date;
 
 /**
  * Created by syj  on 2016/10/4 9:40.
@@ -45,15 +52,26 @@ public class HttpRequestCallback extends BaseRequestCallback {
             e1.printStackTrace();
         }*/
         int responseCode = 0;
+        String objStr = "";
         String msg = "";
-        responseCode = jsonObject.optInt("ret");
-        msg = jsonObject.optString("msg","");
+//        responseCode = jsonObject.optInt("result");
+        objStr = jsonObject.optString("result","");
 
+        String encode = MD5.encode(getNowTime());
+        if (objStr.contains(encode)){
+            objStr.replace(encode,"");
+        }
 
+        objStr = Base64Decoder.decode(objStr);
 
-
-
-
+        try {
+            jsonObject = new JSONObject(objStr);
+            responseCode = jsonObject.optInt("ret");
+            msg = jsonObject.optString("msg");
+            LPLog.print(getClass(), "onResponse: " + jsonObject.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         setResponseCode(responseCode);
         if (responseCode == 200) {
             onFinished(jsonObject);
@@ -61,30 +79,11 @@ public class HttpRequestCallback extends BaseRequestCallback {
             onQuitApp(msg);
         }else {
             RequestError error = new RequestError();
-            /*if (responseCode == 500) {
-                error.setErrorType(ResponseCodeConstant.HTTP_ERROR);
-                error.setErrorCode(responseCode);
-                error.setUnknownErrorCode(true);
-                error.setErrorReason(getNetworkErrorString());
-            } else {
-            }*/
             error.setErrorType(ResponseCodeConstant.PARAM_ERROR);
             error.setErrorCode(responseCode);
             error.setErrorReason(msg);
             setResponseCode(responseCode);
-            int errorType = error.getErrorType();
-            /*if(errorType != ResponseCodeConstant.HTTP_ERROR *//*&& (responseCode == ResponseCodeConstant.Code_ErrorSessionId
-                    || responseCode == ResponseCodeConstant.Code_ExpiredSessionId)*//*){
-                Context context = getContext();
-                if (context != null && context instanceof Activity) {
-                    error.setUnknownErrorCode(true);
-                    error.setErrorReason(getNetworkErrorString());
-                    if (onSessionListner != null){
-                        LPLog.print(getClass(), "onSessionFailed");
-                        onSessionListner.onSessionFailed();
-                    }
-                }
-            }else*/ if(TextUtils.isEmpty(error.getErrorReason())){
+            if(TextUtils.isEmpty(error.getErrorReason())){
                 if(ResponseCodeConstant.respCodeStrMap != null && ResponseCodeConstant.respCodeStrMap.get(responseCode) != 0){
                     error.setErrorReason(getContext().getString(ResponseCodeConstant.respCodeStrMap.get(responseCode)));
                 }else if(responseCode != ResponseCodeConstant.Code_ShowMsgFromServer){
@@ -96,6 +95,12 @@ public class HttpRequestCallback extends BaseRequestCallback {
             onFailed(error);
         }
 
+    }
+
+    public static String getNowTime(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date(System.currentTimeMillis());
+        return simpleDateFormat.format(date);
     }
 
     @Override

@@ -25,4 +25,5 @@ dependencies {
     api  fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation  'junit:junit:4.12'
 //    api project(path: ':utils')
+    implementation 'net.iharder:base64:2.3.9'
 }

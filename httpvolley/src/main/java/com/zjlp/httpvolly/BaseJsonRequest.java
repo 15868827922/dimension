@@ -1,5 +1,6 @@
 package com.zjlp.httpvolly;
 
+import com.MD5;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
@@ -9,9 +10,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.zjlp.httpvolly.log.LPLog;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,7 +67,13 @@ public class BaseJsonRequest implements ProgressCancelNotifer {
         needEncrypt = aNeedEncrypt;
         mNeedSessionId = aNeedSessionId;
 
-        JSONObject encryptedJsonObject;
+        JSONObject encryptedJsonObject = new JSONObject();
+        String str = CodingUtil.authcodeEncode(jsonRequest.toString(), MD5.encode(getNowTime()));
+        try {
+            encryptedJsonObject.put("param", str);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         if (needEncrypt) {
 //            encryptedJsonObject = new JSONObject();
           /*  try {
@@ -79,9 +90,9 @@ public class BaseJsonRequest implements ProgressCancelNotifer {
             encryptedJsonObject = jsonRequest;
         }
         LPLog.print(getClass(), "reqUrl: " + url);
-        LPLog.print(getClass(), "postData: " + jsonRequest.toString());
+        LPLog.print(getClass(), "postData: " + encryptedJsonObject.toString());
         LPResponseErrorListener responseErrorListener = new LPResponseErrorListener();
-        jsonObjectRequest = new JsonObjectRequest(url, jsonRequest,
+        jsonObjectRequest = new JsonObjectRequest(url, encryptedJsonObject,
                 new ResponseListener(), responseErrorListener) {
             
             @Override
@@ -117,6 +128,12 @@ public class BaseJsonRequest implements ProgressCancelNotifer {
         };
         jsonObjectRequest.setShouldCache(false);
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 6, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+    }
+
+    public static String getNowTime(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date(System.currentTimeMillis());
+        return simpleDateFormat.format(date);
     }
 
     public void notifyRequestStart() {// http请求开始的回调
