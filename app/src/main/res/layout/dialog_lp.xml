@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/unit_shape_bg_dialog"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:id="@+id/dialpg_lp">
+    
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_750_48"
+        android:paddingRight="@dimen/dp_750_48"
+        android:paddingTop="@dimen/dp_750_40"
+        android:paddingBottom="@dimen/dp_750_36"
+        android:text="@string/tip"
+        android:textSize="@dimen/sp_750_40"
+        android:textColor="@color/unit_text_tv_title_1"
+        android:ellipsize="end"
+        android:maxLines="2"/>
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_750_48"
+        android:paddingRight="@dimen/dp_750_48"
+        android:paddingBottom="@dimen/dp_750_30"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/conetentSpace"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_40"
+            android:visibility="gone"/>
+        <TextView
+	        android:id="@+id/textContent"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+            android:text="这是一个测试功能，这是一个测试功能，这是一个测试功能。"
+            android:lineSpacingMultiplier="1.4"
+	        android:textSize="@dimen/sp_750_32"
+	        android:textColor="@color/unit_text_tv_title_2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="@dimen/dp_750_16">
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/unit_selector_dialog_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_750_17"
+            android:paddingLeft="@dimen/dp_750_36"
+            android:paddingRight="@dimen/dp_750_36"
+            android:paddingTop="@dimen/dp_750_17"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/unit_text_tv_title_2"
+            android:textSize="@dimen/sp_750_32" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/unit_selector_dialog_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_750_17"
+            android:paddingLeft="@dimen/dp_750_36"
+            android:paddingRight="@dimen/dp_750_36"
+            android:paddingTop="@dimen/dp_750_17"
+            android:text="@string/btn_ok"
+            android:textColor="@color/unit_text_tv_title_1"
+            android:textSize="@dimen/sp_750_32" />
+
+    </LinearLayout>
+    
+</LinearLayout>

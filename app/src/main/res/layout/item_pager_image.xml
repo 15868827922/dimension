@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name" />
+    <com.shizhefei.view.largeimage.LargeImageView
+        android:id="@+id/large_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:background="@color/unit_color_loadimv_main" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/view_good_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_750_120"
+            android:layout_marginRight="@dimen/dp_750_24"
+            android:background="@drawable/shape_btn_bg_execute"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_750_6"
+            android:paddingRight="@dimen/dp_750_6"
+            android:paddingBottom="@dimen/dp_750_14"
+            android:paddingTop="@dimen/dp_750_14"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/text_goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_750_28"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:layout_gravity="bottom|center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看详情"
+                android:textSize="@dimen/sp_750_28"
+                android:textColor="@color/unit_text_tv_title_1"
+                android:layout_gravity="bottom|center_horizontal"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <LinearLayout 
+        android:id="@+id/loadOriginalLayout"
+        android:layout_width="@dimen/dp_750_200"
+        android:layout_height="@dimen/dp_750_56"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_gradient_bg"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/dp_750_80"
+        android:visibility="gone">
+        <TextView 
+            android:id="@+id/textLoadOriginal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="查看原图"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_750_24"
+            android:gravity="center"
+            android:visibility="gone"/>
+        <LinearLayout 
+            android:id="@+id/cancelLoadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:visibility="gone">
+            <TextView 
+                android:id="@+id/textLoadPercent"
+                android:layout_width="@dimen/dp_750_70"
+                android:layout_height="match_parent"
+                android:text="90%"
+                android:textSize="@dimen/sp_750_22"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:singleLine="true"/>
+            <ImageView 
+                android:id="@+id/imgClose"
+                android:layout_width="@dimen/dp_750_70"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/dp_750_24"
+                android:paddingRight="@dimen/dp_750_24"
+                android:paddingTop="@dimen/dp_750_14"
+                android:paddingBottom="@dimen/dp_750_14"
+                android:src="@mipmap/icon_delete_gray"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

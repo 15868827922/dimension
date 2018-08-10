@@ -50,7 +50,7 @@
                     android:text="领取奖励"
                     android:gravity="center"
                     android:textSize="@dimen/sp_750_22"
-                    android:textColor="@color/unit_color_switchbtn_on"
+                    android:textColor="@color/unit_color_switch_btn_on"
                     android:layout_marginRight="@dimen/dp_750_24"/>
 
             </LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_myinfo_changeaddress"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/view_chose_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_750_80"
+             android:background="@color/unit_text_tv_title_4">
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="@dimen/dp_750_88"
+                android:layout_height="@dimen/dp_750_44"
+                android:text="取消"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dp_750_24"
+				android:textColor="@color/unit_text_tv_title_1"
+				android:layout_centerVertical="true"
+				android:background="@drawable/shape_item_btn_bg_cancel"
+                android:textSize="@dimen/sp_750_24" />
+
+
+            <TextView
+                android:id="@+id/btn_sure"
+				android:layout_width="@dimen/dp_750_88"
+				android:layout_height="@dimen/dp_750_44"
+                android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="完成"
+				android:layout_marginRight="@dimen/dp_750_26"
+				android:textColor="@color/white"
+				android:background="@drawable/shape_item_btn_bg_sure"
+                android:textSize="@dimen/sp_750_24" />
+
+        </RelativeLayout>
+
+
+		<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/dp_750_470"
+	        android:orientation="horizontal"
+	        android:gravity="center_vertical"
+			android:background="@color/white">
+	        <com.shenjing.dimension.dimension.base.wheelview.WheelView
+	            android:id="@+id/wv_select_left"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_gravity="center_vertical"
+	            />
+	    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

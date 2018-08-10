@@ -53,7 +53,12 @@
         <activity android:name=".dimension.me.MyBackpackActivity" />
         <activity android:name=".dimension.me.MyTaskActivity" />
         <activity android:name=".dimension.me.ScoreMallActivity" />
-        <activity android:name=".dimension.me.ApplySendActivity"></activity>
+        <activity android:name=".dimension.me.ApplySendActivity" />
+        <activity android:name=".dimension.me.AddressManagerActivity" />
+        <activity android:name=".dimension.me.AddAddressActivity"/>
+        <activity android:name=".dimension.base.select_picture.MultiImageSelectorActivity"/>
+        <activity android:name=".dimension.base.select_picture.PreviewSelectImageActivity"/>
+        <activity android:name=".dimension.base.crop.CropImageActivity"/>
     </application>
 
 </manifest>

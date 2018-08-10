@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.activity.FundmentalActivity;
+import com.shenjing.dimension.dimension.base.util.ActivityUtil;
 import com.shenjing.dimension.dimension.me.model.BackpackInfo;
 import com.shenjing.dimension.dimension.me.view.ConvertScoreTipDialog;
 
@@ -71,6 +72,7 @@ public class MyBackpackActivity extends FundmentalActivity implements View.OnCli
             case R.id.view_score_mall: //积分商城
                 break;
             case R.id.view_apply_send: //申请发货
+                ActivityUtil.gotoActivity(this,ApplySendActivity.class);
                 break;
         }
 

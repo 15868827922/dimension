@@ -3,10 +3,10 @@
 
     <style name="BottomSheetDialog" parent="android:Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/Animation.BottomSheetDialog</item>
+        <item name="android:windowAnimationStyle">@style/Animation.BottomSheetDialogAni</item>
     </style>
 
-    <style name="Animation.BottomSheetDialog" parent="android:Animation.Dialog">
+    <style name="Animation.BottomSheetDialogAni" parent="android:Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/bottom_sheet_slide_in</item>
         <item name="android:windowExitAnimation">@anim/bottom_sheet_slide_out</item>
     </style>

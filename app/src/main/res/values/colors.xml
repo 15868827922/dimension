@@ -32,7 +32,7 @@
 
     <color name="unit_view_stub">#F7F7F7</color> <!--  用于View有高度的分割线  -->
 
-    <color name="unit_color_switchbtn_on">#FFE100</color>  <!--  开关按钮，开状态色值  -->
+    <color name="unit_color_switch_btn_on">#FFE100</color>  <!--  开关按钮，开状态色值  -->
     <color name="unit_color_loadimv_main">@color/default_load_color</color>   <!--  图片加载统一背景色 -->
 
     <color name="color_ratio_inner">@color/unit_text_tv_title_1</color>

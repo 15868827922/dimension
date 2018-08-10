@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dimension.me.ApplySendActivity">
+    tools:context=".dimension.me.ApplySendActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
 
-</android.support.constraint.ConstraintLayout>
+   <LinearLayout
+       android:id="@+id/view_chose_address"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/dp_750_150"
+       android:orientation="horizontal">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:id="@+id/view_user_info"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center_vertical">
+
+               <ImageView
+                   android:layout_width="@dimen/dp_750_36"
+                   android:layout_height="@dimen/dp_750_26"
+                   android:layout_marginLeft="@dimen/dp_750_46"
+                   android:background="@mipmap/icon_address_user_info_tip" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/dp_750_30"
+                   android:text="名字"
+                   android:textColor="@color/unit_text_tv_title_1"
+                   android:textSize="@dimen/sp_750_30" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/dp_750_46"
+                   android:text="15868827922"
+                   android:textColor="@color/unit_text_tv_title_1"
+                   android:textSize="@dimen/sp_750_30" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/view_user_info"
+               android:layout_marginTop="@dimen/dp_750_14">
+
+               <ImageView
+                   android:layout_width="@dimen/dp_750_26"
+                   android:layout_height="@dimen/dp_750_26"
+                   android:layout_marginLeft="@dimen/dp_750_50"
+                   android:background="@mipmap/icon_address_tip" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/dp_750_40"
+                   android:text="浙江省杭州市"
+                   android:textColor="@color/unit_text_tv_title_1"
+                   android:textSize="@dimen/sp_750_24" />
+           </LinearLayout>
+       </LinearLayout>
+
+       <ImageView
+           android:layout_width="@dimen/dp_750_14"
+           android:layout_height="@dimen/dp_750_22"
+           android:background="@mipmap/arrow"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="@dimen/dp_750_46"
+           android:layout_gravity="center_vertical"/>
+   </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_10"
+        android:background="@color/unit_view_stub"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/view_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

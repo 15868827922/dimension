@@ -83,7 +83,7 @@ public class SharePreferenceUtil {
 
     public static String getSavedUserName(Context context) {
         SharedPreferences sp = context.getSharedPreferences(SP_UserInfo, Context.MODE_PRIVATE);
-        return sp.getString(SP_Key_UserName, null);
+        return sp.getString(SP_Key_UserName, "15868827922");
     }
 
     public static void saveServiceMenuList(Context context, String text){

@@ -9,11 +9,23 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.activity.BaseActivity;
+import com.shenjing.dimension.dimension.base.request.HttpRequestCallback;
+import com.shenjing.dimension.dimension.base.request.RequestMap;
+import com.shenjing.dimension.dimension.base.request.URLManager;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
 import com.shenjing.dimension.dimension.base.util.Constants;
+import com.shenjing.dimension.dimension.main.LPApplicationLike;
+import com.zjlp.httpvolly.HttpService;
+import com.zjlp.httpvolly.RequestError;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,6 +53,8 @@ public class ModifyPersonalInfoActivity extends BaseActivity {
 
     @Bind(R.id.edt_input_code)
     EditText mEdtSign;
+    private RequestMap requestMap = RequestMap.newInstance();
+
 
     public static void gotoActivity(Activity activity, int infoType, int requestCode) {
         Bundle extras = new Bundle();
@@ -147,15 +161,13 @@ public class ModifyPersonalInfoActivity extends BaseActivity {
                        return;
                    }
 
-                    setResult(RESULT_OK, new Intent().putExtra(Constants.EXTRA_GET_NICKNAME, mEdtNickName.getText().toString().trim()));
-                    finish();
+                    reqEditUserInfo(INFO_TYPE_NICKNAME);
                 }else if (infoType == INFO_TYPE_SIGN){
                     if (TextUtils.isEmpty(mEdtSign.getText().toString().trim())){
                         toast("请输入签名");
                         return;
                     }
-                    setResult(RESULT_OK, new Intent().putExtra(Constants.EXTRA_GET_SIGN, mEdtSign.getText().toString().trim()));
-                    finish();
+                   reqEditUserInfo(INFO_TYPE_SIGN);
                 }
                 break;
             case R.id.view_delete_nickname:  //删除输入的昵称
@@ -167,4 +179,63 @@ public class ModifyPersonalInfoActivity extends BaseActivity {
         }
     }
 
+    private void reqEditUserInfo(int type){
+        String url = URLManager.getRequestURL(URLManager.Method_Edit_User_Info);
+        requestMap.cancel(url);
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("uid", LPApplicationLike.getUserId());
+            jsonObject.put("token",LPApplicationLike.getUserToken());
+            if (type == INFO_TYPE_NICKNAME){
+                jsonObject.put("user_nickname",mEdtNickName.getText().toString().trim());
+            }else if (infoType == INFO_TYPE_SIGN){
+                jsonObject.put("user_sign",mEdtSign.getText().toString().trim());
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        HttpRequestCallback callback = new HttpRequestCallback(this) {
+            @Override
+            public void onFinished(JSONObject jsonObject) {
+                super.onFinished(jsonObject);
+                try {
+                    jsonObject = new JSONObject(jsonObject.toString().replace(":null", ":\"\""));
+                    jsonObject  = jsonObject.optJSONObject("data");
+                    if (type == INFO_TYPE_NICKNAME){
+                        setResult(RESULT_OK, new Intent().putExtra(Constants.EXTRA_GET_NICKNAME, mEdtNickName.getText().toString().trim()));
+                        finish();
+                    }else if (infoType == INFO_TYPE_SIGN){
+                        setResult(RESULT_OK, new Intent().putExtra(Constants.EXTRA_GET_SIGN, mEdtSign.getText().toString().trim()));
+                        finish();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailed(RequestError error) {
+                super.onFailed(error);
+                toast(error.getErrorReason());
+
+            }
+            @Override
+            public void onQuitApp(String message) {
+                super.onQuitApp(message);
+
+                Toast.makeText(getContext(),message,Toast.LENGTH_SHORT).show();
+            }
+
+        };
+        Request request = HttpService.doPost(url, jsonObject, callback, true, true, true);
+        requestMap.add(url, request);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        requestMap.clear();
+    }
 }

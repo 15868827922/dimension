@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_750_120"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/title_bar_new_color">
+        <FrameLayout
+            android:id="@+id/fl_title_left"
+            android:layout_width="@dimen/dp_750_100"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/dp_750_88"
+                android:layout_height="match_parent"
+                android:background="@drawable/unit_selector_bg_view_init_transparent"
+                android:paddingLeft="@dimen/dp_750_33"
+                android:paddingRight="@dimen/dp_750_33"
+                android:paddingTop="@dimen/dp_750_24"
+                android:paddingBottom="@dimen/dp_750_24"
+                android:src="@mipmap/icon_back_arrow_left_white"
+                android:layout_marginLeft="@dimen/dp_750_34"/>
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="相机胶卷"
+            android:textSize="@dimen/sp_750_38"
+            android:textColor="@color/white"/>
+        <FrameLayout
+            android:id="@+id/fl_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:paddingRight="@dimen/dp_750_24"
+                android:paddingLeft="@dimen/dp_750_32"
+                android:text="完成"
+                android:textSize="@dimen/sp_750_26"
+                android:textColor="@color/white"/>
+        </FrameLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/image_grid"
+        android:background="#181819"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

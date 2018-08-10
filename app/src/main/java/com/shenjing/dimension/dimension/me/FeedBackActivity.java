@@ -26,6 +26,8 @@ import com.shenjing.dimension.R;
 import com.shenjing.dimension.dimension.base.activity.BaseActivity;
 import com.shenjing.dimension.dimension.base.device.DeviceInfo;
 import com.shenjing.dimension.dimension.base.image.LPNetworkImageView;
+import com.shenjing.dimension.dimension.base.select_picture.MultiImageSelectorActivity;
+import com.shenjing.dimension.dimension.base.util.Constants;
 import com.shenjing.dimension.dimension.base.util.PermissionManager;
 import com.shenjing.dimension.dimension.base.util.file.FileUtils;
 import com.shenjing.dimension.dimension.base.util.image.ImageUtils;
@@ -43,7 +45,6 @@ import butterknife.ButterKnife;
 import com.shenjing.dimension.dimension.base.util.FieldUtil;
 
 public class FeedBackActivity extends BaseActivity implements AdapterView.OnItemClickListener,PermissionManager.OnPermissonRequestListner,TextWatcher{
-    private final int REQ_CODE_TAKE_PHOTO = 1;
     private final String TEMP_PHOTO_NAME = "lp_temp.jpg";
     private String mPhotoUrl;
     private List<PicItem> mSelectedPics;
@@ -149,7 +150,7 @@ public class FeedBackActivity extends BaseActivity implements AdapterView.OnItem
     private void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getFile(true)));
-        startActivityForResult(intent, REQ_CODE_TAKE_PHOTO);
+        startActivityForResult(intent, Constants.REQ_CODE_TAKE_PHOTO);
     }
 
 
@@ -166,7 +167,7 @@ public class FeedBackActivity extends BaseActivity implements AdapterView.OnItem
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case RESULT_OK:
-              /*  if (requestCode == MultiImageSelectorActivity.REQ_CODE_MULTI_PHOTO_SELECT) {
+                if (requestCode == Constants.REQ_CODE_MULTI_PHOTO_SELECT) {
                     ArrayList<String> mAddPics = data
                             .getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_PERFORM_ADD_PIC_URLS);
                     ImageCompressor.with().load(mAddPics).compress(new Callback<List<String>>() {
@@ -178,8 +179,8 @@ public class FeedBackActivity extends BaseActivity implements AdapterView.OnItem
                             mPicAdapter.notifyDataSetChanged();
                         }
                     });
-                }*/
-                /*else*/ if (requestCode == REQ_CODE_TAKE_PHOTO) {
+                }
+                else if (requestCode == Constants.REQ_CODE_TAKE_PHOTO) {
                     String path = getFile(false).getPath();
 
                     ///** edit  by liht on 2017/1/20 11:43 保存图片到系统 */

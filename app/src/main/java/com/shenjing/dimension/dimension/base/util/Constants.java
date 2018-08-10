@@ -40,4 +40,9 @@ public class Constants {
     public static final int REQ_CODE_SET_NICKNAME = 1;
     public static final int REQ_CODE_SET_SIGN = 2;
 
+    public static final int REQ_CODE_MULTI_PHOTO_SELECT = 100; //选多张图片
+    public static final int REQ_CODE_PICK_PHOTO = 101; //选择图片
+
+    public static final int REQ_CODE_TAKE_PHOTO = 102;
+
 }

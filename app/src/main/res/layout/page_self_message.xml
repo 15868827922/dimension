@@ -13,7 +13,7 @@
         android:background="@color/white">
 
         <LinearLayout
-            android:id="@+id/view_self_message"
+            android:id="@+id/view_change_header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_750_130"
             android:background="@drawable/selector_white_item_hover"
@@ -30,6 +30,7 @@
                 android:textSize="@dimen/sp_750_24" />
 
             <com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView
+                android:id="@+id/img_user_header"
                 android:layout_width="@dimen/dp_750_100"
                 android:layout_height="@dimen/dp_750_100"
                 android:scaleType="centerCrop"

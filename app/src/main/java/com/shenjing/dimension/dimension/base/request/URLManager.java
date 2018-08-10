@@ -96,7 +96,7 @@ public class URLManager {
      *
      *
      * **************************************************/
-    public static String SL_WWW_DOMAIN = "zhaijidi.zhongmawan.com";
+    public static String SL_WWW_DOMAIN = "/192.168.0.161";
     public static String SL_IMAGE_DOMAIN = "image.o2osl.com";
     public static String SL_IM_DOMAIN = "im.o2osl.com";
 
@@ -220,72 +220,6 @@ public class URLManager {
 
     public static String Method_Edit_User_Info = "/modifyUserInfo"; //修改个人资料
 
-    /*  ----------------  Live  ---------------------*/
-    public static String Method_Live_Login = "/index.php?svc=account&cmd=login"; //直播登录
-    public static String Method_Live_Create_Room = "/sxb?svc=live&cmd=create"; //创建房间
-    public static String Method_Live_Send_Heart = "/index.php?svc=live&cmd=heartbeat"; //心跳
-    public static String Method_Live_Report_Room = "/sxb?svc=live&cmd=reportroom"; //上报房间信息
-    public static String Method_Live_Cache_Liver = "/cacheLiveInfo"; //缓存主播信息——开始直播之后调用
-    public static String Method_Live_Exit_Room = "/sxb?svc=live&cmd=exitroom"; //退出房间
-    public static String Method_Live_ForeshowList = "/forenotice"; //直播预约列表
-
-
-    /*  ----------------  setting  ---------------------*/
-
-    public static String Method_Get_Verification_Code = "/get_sms_code?"; //获取验证码
-    public static String Method_Check_Verification_Code = "/check_sms_code?"; //验证验证码
-    public static String Method_Bind_Phone = "/bindPhone"; //修改绑定手机号
-    public static String Method_Modify_Pass = "/modifyPass"; //修改密码
-    public static String Method_Check_Phone = "/getThePhoneNumHasBind"; //验证手机号是否存在
-
-
-    public static String Method_Get_Push_messasge_status = "/getPushStatus"; //获取是否接受消息推送
-    public static String Method_Set_Push_messasge = "/changePushStatus"; //修改是否接受消息推送
-
-
-    /*  ----------------  User  ---------------------*/
-    public static String Method_User_CardInfo = "/myUCenter";    //用户的个人信息
-    public static String Method_Has_Sign = "/has_sign";    //是否签到
-    public static String Method_Go_Sign = "/user_sign";    //签到
-    public static String Method_Follow_list = "/followList";    //关注列表
-    public static String Method_Follow = "/follow";    //关注
-    public static String Method_Cancel_Follow = "/cancelFollow";    //取消关注
-    public static String Method_Message_List = "/get_user_message ";    //消息列表
-    public static String Method_Active_List = "/act_list";    //活动列表
-    public static String Method_Read_Message = "/read_message";    //活动列表
-    public static String Method_GET_GIFT_Message = "/get_gift";    //领取礼物
-
-    /*  ----------------  抓周边  ---------------------*/
-    public static String Method_Address_list = "/addressList";    //地址列表
-    public static String Method_Add_Address_list = "/addAddress";    //添加地址
-    public static String Method_Change_Address_list = "/editAddress";    //修改地址
-    public static String Method_Delete_Address_list = "/delAddress";    //修改地址
-
-
-    /*  ----------------  充值  ---------------------*/
-    public static String Method_Recharge_list = "/rechargeList";    //充值列表
-    public static String Method_Trade_list = "/getBalanceRecord";    //充值列表
-    public static String Method_Go_Recharge = "/createOrder";    //充值
-
-
-    /*  ----------------  游戏  ---------------------*/
-    public static String Method_Record_list = "/gameRecordList";    //游戏记录
-    public static String Method_Winning_Record_list = "/getWinningRecord";    //抓中游戏记录
-    public static String Method_My_Basket_list = "/userDolls";    //我的篮子
-    public static String Method_Convert_Doll = "/sell_doll";    //兑换积分
-    public static String Method_Complain_list = "/getComplainCate";    //申述列表
-    public static String Method_Around_grad_list = "/getDetail";    //抓周边
-    public static String Method_Doll_service = "/doll_server";    //获取开始游戏是否可以
-    public static String Method_Line_Up = "/LineUp";    //请求进入队列
-    public static String Method_Mail_List = "/ApplyForMailingList";    //邮寄的列表
-    public static String Method_Mail_Commit = "/ApplyForMailing";    //邮寄
-    public static String Method_Mail_Commit_Pay = "/editMailingStat";    //请求支付
-
-    /*  ---------------------   积分商城   -------------------*/
-    public static String Method_Score_shop_list= "/shop_list";    //积分商城列表
-    public static String Method_Score_shop_index= "/shop_index";    //商城列表
-    public static String Method_Convert_Score= "/get_goods";    //兑换积分
-    public static String Method_Convert_List= "/shopping_log";    //兑换积分列表
 
 
 

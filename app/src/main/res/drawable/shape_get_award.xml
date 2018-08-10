@@ -10,6 +10,6 @@
 
         android:width="@dimen/dp_750_1"
 
-        android:color="@color/unit_color_switchbtn_on"/>
+        android:color="@color/unit_color_switch_btn_on"/>
 
 </shape>

@@ -12,6 +12,7 @@ import com.shenjing.dimension.dimension.base.image.LPNetworkRoundedImageView;
 import com.shenjing.dimension.dimension.base.request.HttpRequestCallback;
 import com.shenjing.dimension.dimension.base.request.RequestMap;
 import com.shenjing.dimension.dimension.base.util.ActivityUtil;
+import com.shenjing.dimension.dimension.me.AddressManagerActivity;
 import com.shenjing.dimension.dimension.me.FeedBackActivity;
 import com.shenjing.dimension.dimension.me.MyBackpackActivity;
 import com.shenjing.dimension.dimension.me.MyMessageActivity;
@@ -75,7 +76,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
 
     @Override
     public void initData() {
-        reqAddressList();
+//        reqAddressList();
     }
 
     @Override
@@ -86,25 +87,6 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
                 break;
             case R.id.view_my_task:  //我的任务
                 ActivityUtil.gotoActivity(getActivity(), MyTaskActivity.class);
-                /*// 解密
-                String decrypted = null;
-                try {
-                    decrypted = AesUtils.decrypt("B+gR8WqBGJ9kUE48YSYrSA==");
-                    mTvUserName.setText("解密：" + decrypted);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }*/
-
-               /* try {
-                    AES mAes = new AES();
-                 *//*   mBytes = mString.getBytes("UTF8");
-                    String enString = mAes.encrypt(mBytes);
-                    mTvId.setText("加密后：" + enString);*//*
-                    String deString = mAes.decrypt("MS4yMzQ1Njc4MTIzNDU3RSsxNQ==");
-                    mTvUserName.setText("解密后：" + deString);
-                } catch (Exception e) {
-                    Log.i("qing", "MainActivity----catch");
-                }*/
                 break;
             case R.id.view_my_wallet:  //我的钱包
                 ActivityUtil.gotoActivity(getActivity(), MyWalletActivity.class);
@@ -122,6 +104,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
             case R.id.view_my_order:  //我的订单
                 break;
             case R.id.view_address_manager:  //地址管理
+                ActivityUtil.gotoActivity(getActivity(), AddressManagerActivity.class);
                 break;
 
             case R.id.view_my_props:  //我的道具
@@ -146,7 +129,7 @@ public class MyFragment extends FragmentBase implements View.OnClickListener{
 
 
     private void reqAddressList(){
-        String url = /*URLManager.getRequestURL(URLManager.Method_Address_list)*/"http://192.168.0.157/register";
+        String url = /*URLManager.getRequestURL(URLManager.Method_Address_list)*/"http://192.168.0.160/register";
         requestMap.cancel(url);
         JSONObject jsonObject = new JSONObject();
         try {

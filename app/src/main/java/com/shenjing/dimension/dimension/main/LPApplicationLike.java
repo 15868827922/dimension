@@ -50,9 +50,6 @@ public class LPApplicationLike extends MultiDexApplication{
             StrictMode.setVmPolicy(builder.build());
         }
 
-       /* MyAppGlideModule myAppGlideModule = new MyAppGlideModule();
-        myAppGlideModule.registerComponents(getContext(),Glide.get(getContext()),new Registry());*/
-//        myAppGlideModule.registerComponents(this,new Glide(),);
 
        /* OssManager.getInstance().init(getContext(),Constants.OSS_ENDPOINT,Constants.OSS_BucketName,Constants.OSS_AccessKey,Constants.OSS_SecretKey);
         //初始化APP
@@ -87,6 +84,23 @@ public class LPApplicationLike extends MultiDexApplication{
         return mApplication;
     }
 
+    public static String getUserId(){
+        String userId = "20";
+        /*if (getInstance().getUserInfo() != null) {
+            userId = getInstance().getUserInfo().getId();
+        }*/
+        return userId;
+    }
+
+
+    public static String getUserToken(){
+        String userToken = "9955b33713d2389f48ea83e439080aa23f2a255";
+        /*if (getInstance().getUserInfo() != null) {
+            userToken = getInstance().getUserInfo().getUser_token();
+        }*/
+        return userToken;
+    }
+
    /* public UserInfo getUserInfo() {
         return userInfo;
     }
@@ -118,22 +132,7 @@ public class LPApplicationLike extends MultiDexApplication{
         return userName;
     }
 
-    public static String getUserId(){
-        String userId = "";
-        if (getInstance().getUserInfo() != null) {
-            userId = getInstance().getUserInfo().getId();
-        }
-        return userId;
-    }
 
-
-    public static String getUserToken(){
-        String userToken = "";
-        if (getInstance().getUserInfo() != null) {
-            userToken = getInstance().getUserInfo().getUser_token();
-        }
-        return userToken;
-    }
 
     public static String getNickName() {
         String nickNameStr = "";
@@ -175,7 +174,6 @@ public class LPApplicationLike extends MultiDexApplication{
         URLManager.ServerURL_Images_QA = config.serverImageUrl;
         URLManager.ServerURL_Resource_QA = config.serverResourceUrl;
         URLManager.ServerURL_Offline_Msg_QA = config.serverOfflineMsgUrl;
-        URLManager.ServerURL_IM_FRIEND_REQUEST_QA = config.serverIMFriendUrl;
 
         ImageUrlManager.initialize(URLManager.ServerURL_Images_QA,URLManager.ServerURL_OF_QINIU_ChatImages_QA,URLManager.ServerURL_Images_Production_Deprecated,URLManager.ServerURL_Images_Production);
     }

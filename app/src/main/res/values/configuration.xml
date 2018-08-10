@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 1 线上环境 0 测试环境-->
-    <integer name="server_type">1</integer>
+    <integer name="server_type">0</integer>
     <!-- 测试环境的id
      0 线上环境 (需server_type为0)
      1 用于连接开发环境，请去configuration.java文件中修改
